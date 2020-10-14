@@ -1,4 +1,4 @@
-site_name: Podstawy Programowania
+site_name: Mkdocs website
 theme:
-  name: materia
+  name: yeti
   nav_style: dark
