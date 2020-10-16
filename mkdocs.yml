@@ -3,15 +3,15 @@ site_author: Piotr Machura
 docs_dir: src
 
 theme:
-  name: yeti
+  name: cosmo
   nav_style: dark
 
 extra_javascript:
+    # MathJax for LaTex math support
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 extra_css:
-  - css/extra.css
-  - https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap
+  - css/fonts.css
 
 markdown_extensions:
   - extra
