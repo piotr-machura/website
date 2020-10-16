@@ -1,4 +1,5 @@
 # Article one
+This will show you the contents of `$HOME` variable:
 ```bash
 $ echo $HOME
 /home/user
