@@ -1,4 +1,8 @@
 # Article one
+```bash
+$ echo $HOME
+/home/user
+```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
