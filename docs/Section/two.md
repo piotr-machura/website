@@ -27,11 +27,37 @@ Duis pharetra tellus nisl, quis facilisis augue commodo facilisis.
 
 
 ## Something very different
-Cras nec facilisis augue, id tristique dolor.
-Morbi semper vehicula nunc ac mattis.
-Phasellus dictum ante erat, quis hendrerit risus finibus quis.
-Fusce id eleifend mi, ac mattis dolor.
-Sed sed nulla tortor.
-Sed ultricies, libero eu vulputate lacinia, risus elit aliquam odio, eu placerat libero orci id metus.
-Sed pretium congue nisl.
+Here we will test out things like __BOLD__, _italics_, ~~strikeout~~ and math
+
+$$
+\int\limits_0^{+\infty} f(x) dx = \sqrt{\frac{\pi}{2}} 
+\hspace{10pt} \Rightarrow \hspace{10pt}
+f(x) = e^{-x^2}
+$$
+
+Math delimiters with inline: 
+\(y dy = f(x) dx\)
+or even better with \$: for every function $f$ there exists a point $p$ where etc.
+
+also lists
+
+1. Item BIG
+2. Item another
+    - subitem of item 2
+    - and antoher one
+
+also tables
+
+| table | table 2|
+| ----- | ------ |
+| Content. VEEEERY long content indeed. | Shorter content. |
+
+```python
+"""This is a fenced code block with python code"""
+print("Hello, world!")
+
+class NewClass():
+    def __init__(self):
+        self.number = 0
+```
 

@@ -2,3 +2,10 @@ site_name: Mkdocs website
 theme:
   name: yeti
   nav_style: dark
+extra_javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+markdown_extensions:
+  - extra
+  - mdx_math:
+      enable_dollar_delimiter: True
+  - markdown_del_ins

@@ -7,7 +7,9 @@ lunr==0.5.8
 Markdown==3.3.1
 MarkupSafe==1.1.1
 mkdocs==1.1.2
+mkdocs-bootswatch==1.1
 nltk==3.5
+python-markdown-math==0.7
 PyYAML==5.3.1
 regex==2020.10.11
 six==1.15.0
