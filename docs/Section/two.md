@@ -31,7 +31,7 @@ Here we will test out things like __BOLD__, _italics_, ~~strikeout~~ and math
 
 $$
 \int\limits_0^{+\infty} f(x) dx = \sqrt{\frac{\pi}{2}} 
-\hspace{10pt} \Rightarrow \hspace{10pt}
+\hspace{10pt} \Leftarrow \hspace{10pt}
 f(x) = e^{-x^2}
 $$
 
