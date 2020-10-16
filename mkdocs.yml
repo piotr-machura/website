@@ -1,7 +1,6 @@
 site_name: Mkdocs website
 site_author: Piotr Machura
 docs_dir: src
-prebuild_index: python
 
 theme:
   name: yeti
