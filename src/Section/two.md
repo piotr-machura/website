@@ -35,7 +35,7 @@ $$
 f(x) = e^{-x^2}
 $$
 
-Math delimiters with inline: 
+Math delimiters with inline:
 \(y dy = f(x) dx\)
 or even better with \$: for every function $f$ there exists a point $p$ where etc.
 
