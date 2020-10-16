@@ -2,6 +2,13 @@ site_name: Mkdocs website
 site_author: Piotr Machura
 docs_dir: src
 
+nav:
+    - Home: 'index.md'
+    - Section one:
+        - 'Article one': 'one.md'
+    - Section two:
+        - 'Article two (?)': 'two.md'
+        - 'Article three': 'three.md'
 theme:
   name: cosmo
   nav_style: dark
