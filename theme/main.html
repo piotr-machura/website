@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+<style>
+    @import 'https://fonts.googleapis.com/css2?family=Fira+Mono';
+    @import 'https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap';
+    body { font-family: 'Noto Sans', sans-serif; }
+    code { font-family: 'Fira Mono', monospace; }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12" role="main">{% include "content.html" %}</div>
+{% endblock %}
+
+{% block search_button %}
+{% endblock %}
+
+{% block footer %}
+<div role="footer"><hr>© Piotr Machura. Licensed under <a href=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International</a></div>
+{% endblock %}
