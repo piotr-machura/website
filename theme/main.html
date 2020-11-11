@@ -6,9 +6,12 @@
     @import 'https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap';
     body { font-family: 'Noto Sans', sans-serif; }
     code { font-family: 'Fira Mono', monospace; }
-    blockquote { border-left: 4px solid #cccccc; padding: 0px 10px; color: #6b6b6b; }
+    blockquote { border-left: 4px solid #cccccc; padding: 0px 12px; color: #6b6b6b; }
     img { max-width: 100%; }
     .collapsing { -webkit-transition: none; transition: none; display: none; }
+    .bg-dark { background-color: #3b4252  !important; }
+    .dropdown-menu, .dropdown-item { border: none; background-color: #434c5e !important; color: #fff; }
+    .dropdown-item:hover { background-color: #4c566a !important; color: #fff; }
 </style>
 {% endblock %}
 
@@ -24,5 +27,7 @@
 {% endblock %}
 
 {% block footer %}
-<div role="footer"><hr>© Piotr Machura. Licensed under <a href=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International</a></div>
+<div role="footer"><hr>© Piotr Machura 2020.
+    Licensed under <a href=https://opensource.org/licenses/MIT>MIT</a>
+    and <a href=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International</a></div>
 {% endblock %}
