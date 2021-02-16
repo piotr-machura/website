@@ -1,11 +1,13 @@
-site_name: Sample website
+site_name: Piotr Machura
 site_author: Piotr Machura
 docs_dir: src
+repo_url: https://github.com/piotr-machura/
+edit_uri: ''
 
 theme:
   name: cosmo
   nav_style: dark
-  custom_dir: theme
+  custom_dir: 'theme'
 
 markdown_extensions:
   - extra
@@ -15,7 +17,9 @@ markdown_extensions:
 
 nav:
   - Projects:
-    - 'Coming soon': ''
+    - 'Genetic programming': 'https://github.com/piotr-machura/cartesian-genetic-programming'
+    - 'Complex solver': 'https://github.com/piotr-machura/complex-solver'
+    - 'Arch Linux setup' : 'https://github.com/piotr-machura/arch-setup/wiki'
   - Blog:
     - 'blog/3.md'
     - 'blog/2.md'

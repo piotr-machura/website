@@ -7,27 +7,33 @@
     body { font-family: 'Noto Sans', sans-serif; }
     code { font-family: 'Fira Mono', monospace; }
     blockquote { border-left: 4px solid #cccccc; padding: 0px 12px; color: #6b6b6b; }
-    img { max-width: 100%; }
+    img { max-width: 90%; }
     .collapsing { -webkit-transition: none; transition: none; display: none; }
-    .bg-dark { background-color: #3b4252  !important; }
+    .bg-dark { background-image: none; background-color: #3b4252  !important; }
     .dropdown-menu, .dropdown-item { border: none; background-color: #434c5e !important; color: #fff; }
     .dropdown-item:hover { background-color: #4c566a !important; color: #fff; }
+    .MathJax_Display { overflow-x: auto; overflow-y: hidden; }
+    .navbar-collapse.show { margin-bottom: 2.5vh; }
+    #toc { margin-bottom: 1vh; }
+    p { text-align: justify; }
+    @media (min-width: 767px) {
+        #toc { order: 3;  }
+    }
 </style>
 {% endblock %}
 
-<!-- Remove to enable TOC -->
 {% block content %}
-    <div class="col-md-12" role="main">{% include "content.html" %}</div>
+    <div class="col-md-9" style="order: 2" role="main">{% include "content.html" %}</div>
+    {% if page.meta.toc %}
+    <div class="col-md-3" id="toc">{% include "toc.html" %}</div>
+    {% endif %}
 {% endblock %}
 
-{% block search_button %}
-{% endblock %}
-
-{% block next_prev %}
-{% endblock %}
+{% block next_prev %}{% endblock %}
 
 {% block footer %}
-<div role="footer"><hr>© Piotr Machura 2020.
-    Licensed under <a href=https://opensource.org/licenses/MIT>MIT</a>
-    and <a href=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International</a></div>
+<div style="font-size: smaller" role="footer"><hr>
+    © Piotr Machura 2020. Built with <a href=https://www.mkdocs.org/>MkDocs</a>.<br>
+    Source licensed under <a href=https://opensource.org/licenses/MIT>MIT</a>.
+    Content licensed under <a href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a>.</div>
 {% endblock %}
