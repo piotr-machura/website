@@ -9,11 +9,17 @@
     blockquote { border-left: 4px solid #cccccc; padding: 0px 12px; color: #6b6b6b; }
     img { max-width: 90%; }
     .collapsing { -webkit-transition: none; transition: none; display: none; }
+    .navbar-collapse.show { margin-bottom: 2.5vh; }
+    .navbar-dark .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); 
+    }
     .bg-dark { background-image: none; background-color: #3b4252  !important; }
     .dropdown-menu, .dropdown-item { border: none; background-color: #434c5e !important; color: #fff; }
     .dropdown-item:hover { background-color: #4c566a !important; color: #fff; }
-    .MathJax_Display { overflow-x: auto; overflow-y: hidden; }
-    .navbar-collapse.show { margin-bottom: 2.5vh; }
+    .MathJax_Display::-webkit-scrollbar { display: none; }
+    .MathJax_Display { overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; }
+    .hljs::-webkit-scrollbar { display: none; }
+    .hljs { -ms-overflow-style: none; scrollbar-width: none; }
     #toc { margin-bottom: 1vh; }
     p { text-align: justify; }
     @media (min-width: 767px) {
