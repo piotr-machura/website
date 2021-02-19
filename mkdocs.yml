@@ -19,7 +19,7 @@ nav:
   - Projects:
     - 'Genetic programming': 'https://github.com/piotr-machura/cartesian-genetic-programming'
     - 'Complex solver': 'https://github.com/piotr-machura/complex-solver'
-    - 'Arch Linux setup' : 'https://github.com/piotr-machura/arch-setup/wiki'
+    - 'Arch Linux setup' : 'arch-setup.md'
   - Blog:
     - 'blog/3.md'
     - 'blog/2.md'
