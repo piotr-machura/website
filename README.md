@@ -1,2 +1,3 @@
-# mkdocs-website
-A simple webiste made to test out the amazing mkdocs builder
+# Personal website source
+This is my personal website, built with [MkDocs](https://mkdocs.org). It contains whatever I feel like throwing on
+there.
