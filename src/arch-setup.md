@@ -342,11 +342,6 @@ requires specifying the user in config file. You **have** to change the `user` f
 After you change the `user` field you may link it to the system-wide location with `sudo ln -f
 ~/.config/lightdm/lightdm-mini-greeter.conf /etc/lightdm/.`.
 
-### SpaceFM
-The file manager I use is SpaceFM, and the problem with it is that whenever it opens its "session" (configuration) file
-changes, making it impossible to version control. In order to apply basic preferences copy an example session backup
-file to where SpaceFM expects it with `cp ~/.config/spacefm/session.bak ~/.config/spacefm/session`.
-
 ### Themes and fonts
 Set the X keymap `localectl set-x11-keymap pl`. Not much to say here, except that we couldn't to it when we set the
 system keymap because X server wasn't installed yet.
@@ -375,12 +370,43 @@ wallpaper='<path to wallpaper here>'
 The system is now ready to reboot into the graphical environment. Use `systemctl reboot` to do just that and log in when
 you see the password prompt.
 
+### XFCE4 Programs
+I use some programs from the XFCE4 desktop environment. Their configs are a pain to keep track of, because they remember
+things like last geometry etc. Also I am pretty sure there is a binary database *somewhere*, because simply editing XML
+files often does not work. Therefore we are forced to configure them in their graphical interfaces. Brr.
+
+In Thunar unpin all folders from *"Places"* in sidebar and pin the ones you actually want and ensure the following
+options are ticked:
+
+- *"Draw frames around thumbnails"* 
+- *"Date format: ISO8601"*
+- *"Open folders in new tabs on middle click"*
+- *"Open new thunar instances as tabs"*
+- *"Enable volume management"*
+
+In the volume management settings ensure the following options are ticked:
+
+- *"Mount removable drives when hot-plugged"*
+- *"Mount removable media when inserted"*
+
+Issue the following commands to enable some "hidden settings":
+```bash
+xfconf-query --channel thunar --property /misc-full-path-in-title --create --type bool --set true
+xfconf-query --channel thunar --property /misc-image-size-in-statusbar --create --type bool --set true
+```
+
+In Mousepad set the font to *"Fira Mono Nerd Font"* and ensure the following options are ticked:
+
+- *"Highlight current line"* 
+- *"Highlight matching brackets"* 
+- *"Wrap long lines"* 
+
 ### Firefox
 Log into the Firefox account in order to sync tabs, bookmarks, extensions etc.
 
 The dots repository will clone `userChrome.css` and `userContent.css` into `~/.local/share/firefox-chrome` . To use them perform the following steps:
 1. Open Firefox and go to *"about:config"*.
-2. Accept the risk and search for *"toolkit.legacyUserProfileCustomizations.stylesheets"* . Set it to _"true"_.
+2. Accept the risk and search for *"UserProfileCustomizations"* . Set it to _"true"_.
 3. Go to `~/.mozilla/firefox/xxxxxxxx.default-release`.
 4. Link the cloned chrome folder `ln -s ~/.local/share/firefox-chrome/ chrome` .
 5. Restart the browser.
