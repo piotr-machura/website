@@ -399,8 +399,8 @@ We will now configure git and GitHub to sign commits with a gpg key and push usi
 5. Add the key to GitHub account under *"Settings/SSH and GPG keys"*.
 
 We have cloned a git config under `~/.config/git/config`. It is set up to include an **identity** file, which contains our
-personal info. This way the config can be distributed without the need to modify it. Provide said identity file by
-creating
+personal info. This way the config can be distributed without distributing all the personal info with it. Provide said
+identity file by creating
 ```none
 ~/.config/git/id
 ----------------
@@ -417,6 +417,8 @@ Now for the SSH keys. Again, if you have transferred one from an old machine, yo
 2. Press enter to accept the default location of the key. Provide a pass phrase when prompted.
 3. Add the key to GitHub account under *"Settings/SSH and GPG keys"*.
 4. Check with `ssh git@github.com`. Accept adding it to known hosts and a short message from GitHub should appear.
+
+Last git-related thing is the GitHub CLI. Simply log in with `gh auth login` and follow the instructions.
 
 ### Desktop files
 The `~/.local/share/applications` directory contains a local database of desktop entries for the program launcher and
