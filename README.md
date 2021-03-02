@@ -4,7 +4,7 @@ there.
 
 ### Installation
 After puling with git run `pip install -r requirements.txt` (preferably in a virtual environment) to install mkdocs and
-all other dependencies.  Serve locally with `mkdocs serve` and deploy using `mkdocs build` or `rsync`.
+all other dependencies.  Serve locally with `mkdocs serve`.
 
 ### Deploying with rsync
 Create the following `deploy.sh` bash script:
