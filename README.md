@@ -7,7 +7,7 @@ After puling with git run `pip install -r requirements.txt` (preferably in a vir
 all other dependencies.  Serve locally with `mkdocs serve` and deploy using `mkdocs build` or a custom script.
 
 ### Easy deployment
-Create the following bash script:
+Create the following `deploy.sh` bash script:
 ```bash
 #!/bin/bash
 mkdocs build
