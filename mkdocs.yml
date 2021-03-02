@@ -17,10 +17,6 @@ markdown_extensions:
 
 nav:
   - Projects:
-    - 'Genetic programming': 'https://github.com/piotr-machura/cartesian-genetic-programming'
-    - 'Complex solver': 'https://github.com/piotr-machura/complex-solver'
-    - 'Arch Linux setup' : 'arch-setup.md'
-  - Blog:
-    - 'blog/3.md'
-    - 'blog/2.md'
-    - 'blog/1.md'
+    - 'Arch Linux' : 'arch-setup.md'
+    - 'Personal server' : 'server-setup.md'
+  - Contact: 'contact.md'
