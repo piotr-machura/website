@@ -381,7 +381,6 @@ options are ticked:
 - *"Draw frames around thumbnails"* 
 - *"Date format: ISO8601"*
 - *"Open folders in new tabs on middle click"*
-- *"Open new thunar instances as tabs"*
 - *"Enable volume management"*
 
 In the volume management settings ensure the following options are ticked:
