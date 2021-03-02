@@ -13,6 +13,6 @@ Create the following `deploy.sh` bash script:
 mkdocs build
 rsync -avzP --delete site/ user@hostname:/path/to/destination
 # Optional for docker-compose based servers
-ssh user@hostname "cd /path/to/docker/compose; docker-compose restart;"
+ssh user@hostname "cd /path/to/docker/compose; docker-compose restart server_container_name;"
 ```
 Do not forget to run `chmod +x deploy.sh`.
