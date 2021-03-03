@@ -2,7 +2,7 @@
 {% block extrahead %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
 <style>
-    @import 'https://fonts.googleapis.com/css2?family=Fira+Mono';
+    @import 'https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap';
     @import 'https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap';
     body { font-family: 'Noto Sans', sans-serif; }
     code { font-family: 'Fira Mono', monospace; }
@@ -23,6 +23,10 @@
     p { text-align: justify; }
     @media (min-width: 767px) {
         #toc { order: 3;  }
+    }
+    @media print {
+        #toc { display: none; }
+        footer { display:none; }
     }
 </style>
 {% endblock %}
