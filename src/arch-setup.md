@@ -15,7 +15,7 @@ guide is more of a *full package* sort of deal.
 
 ***
 
-## Installation
+# Installation
 
 In order to customize Arch we first need to install it. Duh.
 
@@ -54,7 +54,7 @@ Ethernet works out of the box, but wifi requires some additional steps.
 
 At any moment you can easily verify the connection with `ping google.com -c 5`.
 
-### Partition the disks
+## Partition the disks
 This is usually the *"hardest"* part, as in the one that actually varies from installation to installation. Brace
 yourself.
 
@@ -94,7 +94,7 @@ the way we claimed they would be when we were using cfdisk.
 **Note:** if you have created a home partition format it as ext4, create the home directory `/mnt/home` and mount it
 there the same way you did with EFI partition.
 
-### Install the new system
+## Install the new system
 We are finally here. The partitions are formatted ready for installation, time to pull the packages we need from the
 Arch repositories and actually install Linux on the machine.
 
@@ -154,7 +154,7 @@ when it hibernates.
 ```
 Make sure to align the swap file entries with the main file system partition entries.
 
-### Host and users
+## Host and users
 We need a name for our machine, and we need to set up the localhost IP addresses. Many programs (like Syncthing, for
 example) rely on the localhost pointing to the machine itself.
 
@@ -211,7 +211,7 @@ Include = /etc/pacman.d/mirrorlist
 ```
 After we're done it's time to re-sync with mirrors with `pacman -Syyyy`.
 
-### Hardware drivers and boot loader
+## Hardware drivers and boot loader
 We need some special packages to take full advantage of our hardware, mainly the [processor
 microcode](https://wiki.archlinux.org/index.php/Microcode#Installation) and the [video
 drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation). Take a look at the Arch Wiki and figure out
@@ -253,11 +253,11 @@ in as the user we have created.
 
 ***
 
-## Customization
+# Customization
 Congratulations, the system is installed. But, as you may have noticed, it lacks some quality of life features like, oh
 I don't know, a graphical interface. Time to take care of that.
 
-### Installing paru
+## Installing paru
 We will use the [paru](https://github.com/Morganamilo/paru) AUR helper to install all of our software. It wraps pacman,
 allowing us to easily install software from the AUR the same we do with the official repos.
 
@@ -265,7 +265,7 @@ allowing us to easily install software from the AUR the same we do with the offi
 2. cd into the `paru-bin` and run `makepkg -si`.
 3. Verify installation `paru -Syyyy`.
 
-### Cloning the repository
+## Cloning the repository
 Time to clone all of the configuration files from the [GitHub repository](https://github.com/piotr-machura/arch-setup).
 It has everything that we need to finalize our installation.
 
@@ -294,7 +294,7 @@ The list contains a nice meta-package which allows us to group all of the base-d
 `sudo pacman -S --asdeps $(pacman -Qqg base-devel)`. The reason we can't install the meta-package right away is because
 it's from the AUR, and we need base-devel to install packages from AUR. It's kind of a chicken-egg problem.
 
-### Systemd and firewall
+## Systemd and firewall
 Systemd services are programs started by the system at boot (or on login, or whenever they are required). They must
 first be **enabled**, and we have a couple we'll need for a fully functional system.
 
@@ -317,7 +317,7 @@ Next, we shall configure our firewall to deny all incoming traffic except for Sy
 
 The last step is optional, but the firewall does clutter the systemd logs quite a bit.
 
-### Display manager
+## Display manager
 Display manager is a piece of software which starts the display server and provides a graphical login screen (called a
 **greeter**) so that we can use our machine like normal people, without messing with TTY. In this case the display
 manager is LightDM, and it requires some configuration to get working.
@@ -341,6 +341,18 @@ requires specifying the user in config file. You **have** to change the `user` f
 
 After you change the `user` field you may link it to the system-wide location with `sudo ln -f
 ~/.config/lightdm/lightdm-mini-greeter.conf /etc/lightdm/.`.
+
+### X Screensaver
+By default the X11 Screensaver will blank out the screen after ~10 minutes of inactivity. If, like me, you find this
+behavior annoying, create or edit
+```none
+/etc/X11/xorg.conf
+------------------
+
+Section "ServerFlags"
+    Option "BlankTime" "0"
+EndSection
+```
 
 ### Themes and fonts
 Set the X keymap `localectl set-x11-keymap pl`. Not much to say here, except that we couldn't to it when we set the
@@ -413,7 +425,7 @@ The dots repository will clone `userChrome.css` and `userContent.css` into `~/.l
 A BTTV configuration json is available [here](https://gist.github.com/piotrmachura16/684e9189c3d34eefb63b0b953bd69840).
 Import it in *"Twitch/BTTV Settings"*.
 
-### Git and GitHub
+## Git and GitHub
 We will now configure git and GitHub to sign commits with a gpg key and push using an SSH key. If you already have a key
 (e.g. on a USB stick) skip the generating steps, if not do the following:
 
