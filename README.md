@@ -12,7 +12,5 @@ Create the following `deploy.sh` bash script:
 #!/bin/bash
 mkdocs build
 rsync -avzP --delete site/ user@hostname:/path/to/destination
-# Optionally restart your webserver
-ssh user@hostname "cd /path/to/docker/compose; docker-compose restart service_name;"
 ```
 Do not forget to run `chmod +x deploy.sh`.
