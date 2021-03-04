@@ -399,6 +399,19 @@ wallpaper='<path to wallpaper here>'
 The system is now ready to reboot into the graphical environment. Use `systemctl reboot` to do just that and log in when
 you see the password prompt.
 
+### Screen tearing
+If you experience screen tearing (especially when watching videos in Firefox) edit the following
+```none
+/etc/X11/xorg.conf.d/20-<intel or amd here>.conf
+-------------------------------------------
+
+Section "Device"
+    Identifier  "<Intel Graphics or AMD here>"
+    Driver      "<intel or amdgpu here>"
+    Option      "TearFree" "true"
+EndSection
+```
+
 ### XFCE4 Programs
 I use some programs from the XFCE4 desktop environment. Their configs are a pain to keep track of, because they remember
 things like last geometry etc. Also I am pretty sure there is a binary database *somewhere*, because simply editing XML
