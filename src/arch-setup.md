@@ -171,7 +171,7 @@ when it hibernates.
 ```
 Make sure to align the swap file entries with the main file system partition entries.
 
-## Host and users
+### Host and users
 We need a name for our machine, and we need to set up the localhost IP addresses. Many programs (like Syncthing, for
 example) rely on the localhost pointing to the machine itself.
 
