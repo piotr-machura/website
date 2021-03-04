@@ -13,6 +13,23 @@ Config files for all of the programs I use are located in my [setup
 repository](https://github.com/piotr-machura/arch-setup). If you just want to grab some of them feel free to do so, this
 guide is more of a *full package* sort of deal.
 
+### Software
+- **Window manager:** [Qtile](http://www.qtile.org/)  
+- **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
+- **Editor:** [Neovim](https://neovim.io/)
+- **File manager:** [Thunar](https://docs.xfce.org/xfce/thunar/start)
+- **Browser:** [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- **PDF viewer:** [Zathura](https://pwmt.org/projects/zathura/)
+
+## Screenshots
+
+***
+
+![Screenshot 2](./img/ss_1.png)
+
+![Screenshot 1](./img/ss_2.png)
+
+
 ***
 
 # Installation
@@ -54,7 +71,7 @@ Ethernet works out of the box, but wifi requires some additional steps.
 
 At any moment you can easily verify the connection with `ping google.com -c 5`.
 
-## Partition the disks
+## Partition the drives
 This is usually the *"hardest"* part, as in the one that actually varies from installation to installation. Brace
 yourself.
 
@@ -257,7 +274,7 @@ in as the user we have created.
 Congratulations, the system is installed. But, as you may have noticed, it lacks some quality of life features like, oh
 I don't know, a graphical interface. Time to take care of that.
 
-## Installing paru
+### Installing paru
 We will use the [paru](https://github.com/Morganamilo/paru) AUR helper to install all of our software. It wraps pacman,
 allowing us to easily install software from the AUR the same we do with the official repos.
 
