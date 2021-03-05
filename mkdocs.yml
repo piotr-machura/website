@@ -20,3 +20,4 @@ nav:
     - 'Arch Linux' : 'arch-setup.md'
     - 'Personal server' : 'server-setup.md'
   - Contact: 'contact.md'
+  - Mail: '/mail'
