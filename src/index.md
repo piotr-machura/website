@@ -1,3 +1,6 @@
+---
+notoc: true
+---
 # About
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum diam id sapien imperdiet posuere. Integer metus

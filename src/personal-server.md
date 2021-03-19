@@ -1,6 +1,3 @@
----
-toc: true
----
 # Personal server setup
 
 ![Docker logo](img/docker_logo.png)

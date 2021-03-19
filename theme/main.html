@@ -8,6 +8,7 @@
     img {   display: block; margin-left: auto; margin-right: auto; }
     pre code, code { font-family: 'Fira Mono', monospace; }
     blockquote { border-left: 4px solid #cccccc; padding: 0px 12px; color: #6b6b6b; }
+    table { display: block; overflow-x: auto; }
     ol, ul, dl {padding-left: 20px;}
     .collapsing { -webkit-transition: none; transition: none; display: none; }
     .navbar-dark .navbar-toggler-icon {
@@ -34,7 +35,7 @@
 
 {% block content %}
     <div class="col-md-9" style="order: 2" role="main">{% include "content.html" %}</div>
-    {% if page.meta.toc %}
+    {% if not page.meta.notoc %}
     <div class="col-md-3" id="toc">{% include "toc.html" %}</div>
     {% endif %}
 {% endblock %}

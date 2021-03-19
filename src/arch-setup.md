@@ -1,6 +1,3 @@
----
-toc: true
----
 # Arch Linux setup
 ![Arch Linux logo](./img/arch.png)
 
@@ -317,6 +314,7 @@ first be **enabled**, and we have a couple we'll need for a fully functional sys
 
 **System-wide** services `systemctl enable <service name here>` :
 
+- `systemd-timesyncd.service`
 - `lightdm.service`
 - `bluetooth.service`
 - `ufw.service`
