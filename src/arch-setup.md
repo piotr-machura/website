@@ -11,7 +11,7 @@ repository](https://github.com/piotr-machura/arch-setup). If you just want to gr
 guide is more of a *full package* sort of deal.
 
 ### Software
-- **Window manager:** [Qtile](http://www.qtile.org/)  
+- **Window manager:** [Qtile](http://www.qtile.org/)
 - **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
 - **Editor:** [Neovim](https://neovim.io/)
 - **File manager:** [Thunar](https://docs.xfce.org/xfce/thunar/start)
@@ -20,14 +20,11 @@ guide is more of a *full package* sort of deal.
 
 ## Screenshots
 
-***
 
 ![Screenshot 2](./img/ss_1.png)
 
 ![Screenshot 1](./img/ss_2.png)
 
-
-***
 
 # Installation
 
@@ -265,8 +262,6 @@ exit the chroot with `exit` and shutdown the computer with `systemctl poweroff`.
 Next, we unplug the ISO from our USB port and power the machine on. The standard TTY screen should appear and we can log
 in as the user we have created.
 
-***
-
 # Customization
 Congratulations, the system is installed. But, as you may have noticed, it lacks some quality of life features like, oh
 I don't know, a graphical interface. Time to take care of that.
@@ -418,7 +413,7 @@ files often does not work. Therefore we are forced to configure them in their gr
 In Thunar unpin all folders from *"Places"* in sidebar and pin the ones you actually want and ensure the following
 options are ticked:
 
-- *"Draw frames around thumbnails"* 
+- *"Draw frames around thumbnails"*
 - *"Date format: ISO8601"*
 - *"Open folders in new tabs on middle click"*
 - *"Enable volume management"*
@@ -436,9 +431,9 @@ xfconf-query --channel thunar --property /misc-image-size-in-statusbar --create 
 
 In Mousepad set the font to *"Fira Mono Nerd Font"* and ensure the following options are ticked:
 
-- *"Highlight current line"* 
-- *"Highlight matching brackets"* 
-- *"Wrap long lines"* 
+- *"Highlight current line"*
+- *"Highlight matching brackets"*
+- *"Wrap long lines"*
 
 ### Firefox
 Log into the Firefox account in order to sync tabs, bookmarks, extensions etc.
