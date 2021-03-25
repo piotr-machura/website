@@ -10,7 +10,7 @@ all other dependencies.  Serve locally with `mkdocs serve`.
 Create the following `deploy.sh` bash script:
 ```bash
 #!/bin/bash
-mkdocs build
-rsync -avzP --delete site/ user@hostname:/path/to/destination
+mkdocs build -q
+rsync -az --partial --delete site/ user@hostname:/path/to/destination
 ```
 Do not forget to run `chmod +x deploy.sh`.

@@ -119,7 +119,7 @@ The following notation will be used:
 
 - X.X.X.X will denote the static host **IPv4 address**.
 - example.com will denote the **base domain** purchased at the registrar.
-- `./` will denote the root of the project (ie. the directory containing docker-compose.yml).
+- ./ will denote the root of the project (ie. the directory containing docker-compose.yml).
 
 The source code required for the implementation is available in the associated [GitHub
 repository](https://github.com/piotr-machura/personal-server/).
