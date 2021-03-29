@@ -1,4 +1,4 @@
-# Personal server setup
+# Personal server
 
 ![Docker logo](img/docker_logo.png)
 
@@ -24,7 +24,7 @@ respective Docker conatiners.
 
 ![Simplified server diagram](img/server_diagram.svg)
 
-# Containerization
+# Containers
 
 A container is a process that has been separated from the rest of the system. Said separation is usually
 achieved using the OS-level virtualization capabilities of the Linux kernel, in particular the [kernel
@@ -98,12 +98,11 @@ through a port in such wrapper, as not doing so has been reported to cause issue
 When multiple containers run on the same machine it is possible to connect them into a local network, managed by the
 docker daemon. Each container is assigned an Ipv4 address, allowing for communication. Docker also creates a **name
 server**, which resolves containers' names to their IP addresses. One can, for example, ping container named
-`name1` from container `name2` simply with `ping name1`.
-
-This mechanizm is useful for creating a **reverse proxy** that is also a container in of itself.
+`name1` from container `name2` simply with `ping name1` (if the two reside in the same docker network). This mechanizm
+is useful for creating a **reverse proxy** that is also a container in of itself.
 
 ## docker-compose
-The `docker run` command usually requires a lot of arguments (names, bound volumes, networks, published ports, environment
+The `docker run` command usually requires a lot of arguments (name, bound volumes, networks, published ports, environment
 variables etc.). It also assumes some components to already be in place (eg. the used networks). This can make the
 process of deploying multiple dependent containers cumbersome, requiring multiple multi-line commands executed in the
 correct order.
@@ -114,7 +113,7 @@ networks, volumes and everything else needed to orchestrate the deployment of a 
 reproducing a complex set of interconnected web services as simple as pulling the docker-compose.yml file (eg. from a
 GitHub repository) and issuing the command `docker-compose up -d`.
 
-# Server implementation
+# Setting up the server
 The following notation will be used:
 
 - X.X.X.X will denote the static host **IPv4 address**.
@@ -137,8 +136,6 @@ We will set the following dns records (arrow meaning "pointing to"):
 The above mentioned TXT records ensure no email spoofing has taken place and greatly increase the probability of our
 messages not being flagged as spam. They require the server to be already running and are discussed in more detail in
 [Mail server#Best practices](#).
-
-
 
 ## Reverse proxy
 All of our services (with email being the only exception) will be served through an instance of the nginx web server

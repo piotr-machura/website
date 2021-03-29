@@ -6,11 +6,12 @@ there.
 After puling with git run `pip install -r requirements.txt` (preferably in a virtual environment) to install mkdocs and
 all other dependencies.  Serve locally with `mkdocs serve`.
 
-### Deploying with rsync
-Create the following `deploy.sh` bash script:
+### Deploying with rsync after every commit
+Create the following hook at `./git/hooks/post-commit`:
 ```bash
-#!/bin/bash
-mkdocs build -q
-rsync -az --partial --delete site/ user@hostname:/path/to/destination
+#!/bin/bash -xe
+mkdocs build --quiet --clean
+rsync --archive --compress --partial --delete \
+    site/ user@hostname:/path/to/site/
 ```
-Do not forget to run `chmod +x deploy.sh`.
+Do not forget to run `chmod +x ./.git/hooks/post-commit`.
