@@ -8,6 +8,10 @@ theme:
   name: cosmo
   nav_style: dark
   custom_dir: 'theme'
+  hljs_languages:
+    - dockerfile
+    - nginx
+    - yaml
 
 markdown_extensions:
   - extra

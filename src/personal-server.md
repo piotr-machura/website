@@ -2,6 +2,7 @@
 
 ![Docker logo](img/docker_logo.png)
 
+
 The goal of this project is to create a personal server that will host a static website, fully capable email stack and a
 webmail client. Docker makes the process of configuration and deployment faster and tidier, allowing us to construct the
 server from *almost* ready-to-go parts. It also makes the installation pretty much host-independent, as in the host's
@@ -11,7 +12,7 @@ We will use the following open source software to create our server:
 
 - **Web server:** [nginx](https://nginx.org/), modified to include [certbot](https://certbot.eff.org) for ease of
    obtaining and renewing LetsEncrypt SSL certificates. 
-- **Email stack:** [docker-mailserver](https://github.com/docker-mailserver/docker-mailserver), configured to maximize
+- **Email stack:** [docker-mailserver](https://docker-mailserver.github.io/docker-mailserver/v9.1/), configured to maximize
    the probability of not landing in Gmails spam folder.
 - **Webmail client:** [Roundcube](https://roundcube.net/) with [context
    menu](https://github.com/JohnDoh/roundcube-contextmenu), [persistent
@@ -123,6 +124,41 @@ The following notation will be used:
 The source code required for the implementation is available in the associated [GitHub
 repository](https://github.com/piotr-machura/personal-server/).
 
+### Project structure
+The project structure is as follows:
+```none
+./
+│
+├─ config/
+│  ├─ radicale/
+│  ├─ roundcube/
+│  └─ nginx/
+│
+├─ build/
+│  ├─ radicale/
+│  ├─ nginx-certbot/
+│  └─ roundcube/
+│
+├─ data/
+│  ├─ roundcube/
+│  ├─ nginx/
+│  ├─ radicale/
+│  ├─ mailserver/
+│  └─ letsencrypt/
+│
+├─ docker-compose.yml
+├─ admin.sh
+└─ init.sh
+```
+
+The `./config` directory contains persistent config of containerized applications, `./build` will contain build
+resources for customized containers and the `./data` directory will be populated with docker volumes specific to the
+current installation (user data, certificates, website files etc.). The first two can be version controlled (eg. with
+Git), and `./data` can be easily backed up (eg. using rsync).
+
+The `./init.sh` shell script is used to install all of the required tools (Docker, docker-compose, mail server setup
+script), whereas `./admin.sh` enables easy administration of the server (adding users, obtaining SSL certificates etc.).
+
 ### DNS records
 
 We will set the following dns records (arrow meaning "pointing to"):
@@ -137,7 +173,110 @@ The above mentioned TXT records ensure no email spoofing has taken place and gre
 messages not being flagged as spam. They require the server to be already running and are discussed in more detail in
 [Mail server#Best practices](#).
 
+### Skeleton docker-compose.yml
+Create a skeleton of docker-compose.yml file is as follows:
+```yaml
+version: '3'
+services:
+  <service sections will go here>
+```
+
 ## Reverse proxy
 All of our services (with email being the only exception) will be served through an instance of the nginx web server
 acting as a **reverse proxy**. This ensures that all connections with the outside world are utilizing HTTPS protocol
-and, as a consequence, SSL encryption.
+and, as a consequence, SSL encryption. To achieve this we will use the **nginx** web server, modified to include the
+**Certbot** LetsEncrypt client. This will allow us to automatically obtain and renew the SSL certificates for all of our
+domains.
+
+**Note:** there exists an official [Certbot](https://hub.docker.com/r/certbot/certbot) docker container, but it requires
+access to host's port 80 for accepting the HTTP challenges when obtaining/renewing certificates. This conflicts with the
+nginx container, and would require some intricate mechanizm that would stop the nginx container every time Certbot tries
+to renew SSL certificates, ie. once per day, and then restarting nginx once Certbot is done. The solution proposed here
+is, in author's opinion, much simpler.
+
+### Creating the image
+
+We shall start by writing a new Dockerfile under `./build/nginx-certbot/Dockerfile`. We will use the `nginx:alpine`
+official image as our base and install Certbot and it's nginx plugin from official Alpine Linux repositories.
+```dockerfile
+FROM nginx:alpine
+
+RUN set -xe; \
+    apk add certbot certbot-nginx; \
+    mkdir /etc/letsencrypt /var/log/letsencrypt
+```
+We have also created the directories used by Certbot for storing certificates and renewal logs. To make the data
+persistent we use docker volumes.
+```dockerfile
+VOLUME ["/etc/letsencrypt"]
+VOLUME ["/var/log/letsencrypt"]
+```
+Alpine Linux does not come with the usual cron utility. We have to create a shell script in an appropriate location and
+start the crond task daemon in the background when the container starts.
+```dockerfile
+COPY ./renew /etc/periodic/daily/renew
+RUN chmod +x /etc/periodic/daily/renew
+```
+Provide the renew script by writing the `./build/nginx-cerbot/renew`.
+```bash
+#!/bin/sh
+sleep $(($RANDOM % 60))m
+certbot renew
+```
+The first line delays the renewal by a random time between 0 and 60 minutes, as LetsEncrypt recommends attempting
+renewal at different times each day. All that remains is to modify the container's entry point to start the crond which
+will execute the above script.
+```dockerfile
+CMD sh -c "crond; nginx -g 'daemon off;'"
+```
+Notice that the nginx web server is started with the 'daemon off' option to keep it in the foreground. This is because a
+docker container will exit once no processes are running in the foreground.
+
+### Configuring the web server
+Configuration files for the nginx web server will be automatically sourced from `./config/nginx`. To host the static content stored in
+`./data/nginx/default` on the website root create a basic configuration file in `./config/nginx/default.conf`.
+```nginx
+server {
+    listen       80;
+    server_name  example.com www.example.com;
+
+    location / {
+        root /usr/share/nginx/html/default;
+        index index.html index.htm;
+    }
+
+    error_page 404 /404.html;
+    location /404.html {
+        root   /usr/share/nginx/html/default;
+    }
+}
+```
+The default server responds to requests on port 80 for our base domain and WWW sub domain, hosting the static content
+from `/usr/share/nginx/html/default` (corresponding to `./data/nginx/default` on host machine). Do not worry about SSL
+certificates, as those will be automatically added by Certbot.
+
+### The nginx docker-compose section
+All that is left is to setup the launch of our container inside `./docker-compose.yml` under the `services`
+key.
+```yaml
+webserver:
+  build: ./build/nginx-certbot
+  image: local/nginx-certbot
+  container_name: nginx-certbot
+  restart: unless-stopped
+  volumes:
+    - ./config/nginx:/etc/nginx/conf.d
+    - ./data/nginx:/usr/share/nginx/html:ro
+    - ./data/letsencrypt:/etc/letsencrypt
+  ports:
+    - "80:80"
+    - "443:443"
+```
+We have named our image `local/nginx-certbot` and docker-compose will automatically build it from source files in
+`./build/nginx-certbot` if it's not already present on the system. The container's HTTP and HTTPS ports are published as
+corresponding host's ports and the container will restart if nginx crashes.. The `default.conf` we have just written
+(and any other file in `./config/nginx` will be automatically sourced thanks to an 'include' directive in the default
+nginx config.
+
+Note that while the static website data is bound as read only, the configuration and certificate volumes are not. This
+is because they will be modified by Certbot when the certificates are obtained.
