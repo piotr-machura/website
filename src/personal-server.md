@@ -178,7 +178,7 @@ Create a skeleton of docker-compose.yml file is as follows:
 ```yaml
 version: '3'
 services:
-  <service sections will go here>
+  # Service sections will go here
 ```
 
 ## Reverse proxy
@@ -233,8 +233,8 @@ Notice that the nginx web server is started with the 'daemon off' option to keep
 docker container will exit once no processes are running in the foreground.
 
 ### Configuring the web server
-Configuration files for the nginx web server will be automatically sourced from `./config/nginx`. To host the static content stored in
-`./data/nginx/default` on the website root create a basic configuration file in `./config/nginx/default.conf`.
+To host the static content stored in `./data/nginx/default` on the website root create a basic configuration file in
+`./config/nginx/default.conf`.
 ```nginx
 server {
     listen       80;
