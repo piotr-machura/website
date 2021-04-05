@@ -174,7 +174,7 @@ messages not being flagged as spam. They require the server to be already runnin
 [Mail server#Best practices](#).
 
 ### Skeleton docker-compose.yml
-Create a skeleton of docker-compose.yml file is as follows:
+Create a skeleton of docker-compose.yml file as follows:
 ```yaml
 version: '3'
 services:
@@ -253,7 +253,12 @@ server {
 ```
 The default server responds to requests on port 80 for our base domain and WWW sub domain, hosting the static content
 from `/usr/share/nginx/html/default` (corresponding to `./data/nginx/default` on host machine). Do not worry about SSL
-certificates, as those will be automatically added by Certbot.
+certificates and HTTP to HTTPS redirects, as those will be automatically added by Certbot.
+
+**Note:** it is important that initial nginx configuration files **do not contain** a reference to the certificates
+**unless those are already present** (eg. backed up from a previous installation), as nginx will error and exit with
+'file not found' message. It is therefore advisable not to version controll additional changes to the configuration
+after the server has been deployed (or even add the entire `./config/nginx` directory to a `.gitignore`).
 
 ### The nginx docker-compose section
 All that is left is to setup the launch of our container inside `./docker-compose.yml` under the `services`
@@ -274,7 +279,7 @@ webserver:
 ```
 We have named our image `local/nginx-certbot` and docker-compose will automatically build it from source files in
 `./build/nginx-certbot` if it's not already present on the system. The container's HTTP and HTTPS ports are published as
-corresponding host's ports and the container will restart if nginx crashes.. The `default.conf` we have just written
+corresponding host's ports and the container will restart if nginx crashes. The `default.conf` we have just written
 (and any other file in `./config/nginx` will be automatically sourced thanks to an 'include' directive in the default
 nginx config.
 
