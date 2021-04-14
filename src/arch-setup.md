@@ -184,7 +184,7 @@ regular user for the everyday operations and allow him to perform root-only acti
 
 3. Change the root password `passwd`.
 4. Add the user with `useradd -m <username here>`. Set the password `passwd <username here>`.
-5. Add the user to the wheel group `usermod -aG wheel,audio,video,optical,storage <username here>`.
+5. Add the user to the wheel group `usermod -aG wheel <username here>`.
 Use `groups <username here>` to list all groups of a user.
 6. Edit the sudoers file
 ```none
@@ -313,6 +313,7 @@ first be **enabled**, and we have a couple we'll need for a fully functional sys
 - `lightdm.service`
 - `bluetooth.service`
 - `ufw.service`
+- `docker.service`
 
 **User** services `systemctl enable --user <service name here>` :
 

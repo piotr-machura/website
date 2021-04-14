@@ -147,8 +147,7 @@ The project structure is as follows:
 │  └─ letsencrypt/
 │
 ├─ docker-compose.yml
-├─ admin.sh
-└─ init.sh
+└─ admin.sh
 ```
 
 The `./config` directory contains persistent config of containerized applications, `./build` will contain build
@@ -156,8 +155,8 @@ resources for customized containers and the `./data` directory will be populated
 current installation (user data, certificates, website files etc.). The first two can be version controlled (eg. with
 Git), and `./data` can be easily backed up (eg. using rsync).
 
-The `./init.sh` shell script is used to install all of the required tools (Docker, docker-compose, mail server setup
-script), whereas `./admin.sh` enables easy administration of the server (adding users, obtaining SSL certificates etc.).
+The `./admin.sh` shell script is used to install all of the required tools (Docker, docker-compose, mail server setup
+script) and enables easy administration of the server (adding users, obtaining SSL certificates etc.).
 
 ### DNS records
 
@@ -285,3 +284,88 @@ nginx config.
 
 Note that while the static website data is bound as read only, the configuration and certificate volumes are not. This
 is because they will be modified by Certbot when the certificates are obtained.
+
+## CardDAV server
+CardDAV is an internet protocol based on HTTP used for synchronizing address books between devices and services. On iOS
+the default contacts can connect to a CardDAV server, and there exist multiple open source solutions allowing the same
+on Android.
+
+We will be hosting a CardDAV server called [Radicale](https://radicale.org/3.0.html), which is free, open source and
+extremely lightweight. Unfortunately, there is no first-party Docker container, so we will have to create one ourselves.
+
+Create a new Dockerfile in the `./build/radicale` directory, starting from the base Alpine Linux image and adding
+software required by the CardDAV server.
+```dockerfile
+FROM alpine:3.13.2
+RUN set -xe && \
+    apk add --no-cache apache2-utils python3 py3-bcrypt py3-cffi py3-pip; \
+    pip3 install bcrypt passlib pytz radicale; \
+    mkdir -p /var/radicale/data/collections /var/radicale/config; \
+    touch /var/radicale/data/users
+```
+You may have noticed that, aside from required python tools, we have installed `apache2-utils`. This is because the most
+secure way of authenticating Radicale users is with Apache's `htpasswd`, and that's what we will use. We have also
+created two directories - one for the user data and one for configuration, as well as a file `users` used by `htpasswd`.
+
+Next, we will need to write a configuration file for Radicale. Create `./build/radicale/config.ini` and fill it with the
+following contents.
+```ini
+[auth]
+type = htpasswd
+htpasswd_filename = /var/radicale/data/users
+htpasswd_encryption = bcrypt
+
+[server]
+hosts = 0.0.0.0:8000
+
+[storage]
+filesystem_folder = /var/radicale/data/collections
+```
+Most setting are pretty self explanatory. We have chosen bcrypt as the password encryption algorithm and we the
+container will host Radicale on port 8000. Copy the file to `./config/radicale` and to finish the container.
+```dockerfile
+COPY ./config.ini /var/radicale/config/config.ini
+
+VOLUME ["/var/radicale/data"]
+VOLUME ["/var/radicale/config"]
+
+EXPOSE 8000
+
+CMD sh -c "python3 -m radicale --config /var/radicale/config/config.ini"
+```
+We copy the configuration, expose data and config volumes, as well as our chosen port. The container's entry point is
+simply Python launching Radicale with our configuration file. Let's add the new container to our `./docker-compose.yml`
+under the `services` key.
+```yaml
+carddav:
+  build: ./build/radicale
+  image: local/radicale
+  container_name: radicale
+  restart: unless-stopped
+  volumes:
+    - ./config/radicale:/var/radicale/config:ro
+    - ./data/radicale:/var/radicale/data
+```
+We have named our image `local/radicale` and our container `radicale`. Notice that we have not **published** any ports.
+This is because we will use our nginx container to act as a reverse proxy, redirecting HTTPS encrypted traffic to
+Radicale. Accomplish this by adding a new virtual host in `./config/nginx/dav.conf` (remember that all files in
+`./config/nginx` are sourced automatically).
+```nginx
+server {
+    listen 80;
+    server_name dav.example.com;
+    location / {
+        proxy_pass http://radicale:8000/;
+    }
+}
+```
+The key to the reverse proxy is the `proxy_pass` directive. Thanks to the Docker network connecting our containers we
+can refer to port 8000 of the Radicale container by it's name, and Docker will resolve that to the IP address of said
+container in the Docker network. This way there is no need to expose additional ports on the host or worry about
+encrypting the traffic between the CardDAV server and the Internet, as the connection is established between the client
+and nginx, and then relayed internally to Radicale, and all connections with nginx will be encrypted once we get our
+certificates from Certbot.
+
+## Webmail client
+
+## Email server

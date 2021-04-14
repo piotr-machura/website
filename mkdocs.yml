@@ -12,6 +12,7 @@ theme:
     - dockerfile
     - nginx
     - yaml
+    - ini
 
 markdown_extensions:
   - extra
