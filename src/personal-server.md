@@ -178,7 +178,13 @@ Create a skeleton of docker-compose.yml file as follows:
 version: '3'
 services:
   # Service sections will go here
+
+networks:
+  default:
+    name: service_network
 ```
+Containers under the `services` key are automatically added to the default network. We have therefore rennamed it to
+`service_network` for clarity.
 
 ## Reverse proxy
 All of our services (with email being the only exception) will be served through an instance of the nginx web server
@@ -193,7 +199,7 @@ nginx container, and would require some intricate mechanizm that would stop the 
 to renew SSL certificates, ie. once per day, and then restarting nginx once Certbot is done. The solution proposed here
 is, in author's opinion, much simpler.
 
-### Creating the image
+### The nginx-certbot image
 
 We shall start by writing a new Dockerfile under `./build/nginx-certbot/Dockerfile`. We will use the `nginx:alpine`
 official image as our base and install Certbot and it's nginx plugin from official Alpine Linux repositories.
@@ -293,6 +299,7 @@ on Android.
 We will be hosting a CardDAV server called [Radicale](https://radicale.org/3.0.html), which is free, open source and
 extremely lightweight. Unfortunately, there is no first-party Docker container, so we will have to create one ourselves.
 
+### The Radicale image
 Create a new Dockerfile in the `./build/radicale` directory, starting from the base Alpine Linux image and adding
 software required by the CardDAV server.
 ```dockerfile
@@ -334,8 +341,10 @@ EXPOSE 8000
 CMD sh -c "python3 -m radicale --config /var/radicale/config/config.ini"
 ```
 We copy the configuration, expose data and config volumes, as well as our chosen port. The container's entry point is
-simply Python launching Radicale with our configuration file. Let's add the new container to our `./docker-compose.yml`
-under the `services` key.
+simply Python launching Radicale with our configuration file.
+
+### The CardDAV docker-compose section
+Let's add the new container to our `./docker-compose.yml` under the `services` key.
 ```yaml
 carddav:
   build: ./build/radicale
@@ -348,8 +357,12 @@ carddav:
 ```
 We have named our image `local/radicale` and our container `radicale`. Notice that we have not **published** any ports.
 This is because we will use our nginx container to act as a reverse proxy, redirecting HTTPS encrypted traffic to
-Radicale. Accomplish this by adding a new virtual host in `./config/nginx/dav.conf` (remember that all files in
-`./config/nginx` are sourced automatically).
+Radicale.
+
+### The CardDAV reverse proxy
+All we have to do is add new virtual host in `./config/nginx/dav.conf` (remember that all files in
+`./config/nginx` are sourced automatically), pointing all HTTP requests for host `dav.exapmle.com` to our Radicale
+container, port 8000.
 ```nginx
 server {
     listen 80;
