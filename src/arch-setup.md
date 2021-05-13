@@ -240,6 +240,7 @@ tells the boot loader to start our Arch Linux after the computer turns on.
 default 	arch.conf
 editor 		no
 console-mode 	max
+timeout 5
 ```
 **Note:** use tabs for alignment. Ensure that this is the case by doing `:set list noexpandtab` in Neovim.
 
@@ -251,6 +252,17 @@ Next we'll need to edit the arch loader config, which tell the boot loader what 
 title		Arch Linux
 linux 		/vmlinuz-linux
 initrd 		/initramfs-linux.img
+initrd 		/<cpu vendor name in lowercase here>-ucode.img
+options		root=/dev/<root partition name here>
+```
+Having a backup entry to boot into arch with LTS kernel is generaly a good idea.
+```none
+/boot/loader/entries/arch-lts.conf
+------------------------------
+
+title		Arch Linux - LTS kernel
+linux 		/vmlinuz-linux-lts
+initrd 		/initramfs-linux-lts.img
 initrd 		/<cpu vendor name in lowercase here>-ucode.img
 options		root=/dev/<root partition name here>
 ```
