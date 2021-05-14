@@ -10,8 +10,6 @@ Config files for all of the programs I use are located in my [setup
 repository](https://github.com/piotr-machura/arch-setup). If you just want to grab some of them feel free to do so, this
 guide is more of a *full package* sort of deal.
 
-# 🇵🇱 POLAND ALERT 🇵🇱
-
 ## Software
 - **Window manager:** [Qtile](http://www.qtile.org/)
 - **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
