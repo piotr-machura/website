@@ -10,6 +10,8 @@ Config files for all of the programs I use are located in my [setup
 repository](https://github.com/piotr-machura/arch-setup). If you just want to grab some of them feel free to do so, this
 guide is more of a *full package* sort of deal.
 
+# 🇵🇱 POLAND ALERT 🇵🇱
+
 ## Software
 - **Window manager:** [Qtile](http://www.qtile.org/)
 - **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
@@ -65,8 +67,9 @@ contains a list of packages located in `~/.local/share/pacman/PKGLIST` and we wi
 2. Install the packages `paru -S --needed - < ~/.local/share/pacman/PKGLIST`.
 
 ### Pacman hooks
-Link the included pacman hooks to the system-wide location `sudo ln ~/.local/share/pacman/*.hook /etc/pacman.d/hooks`.
-The hooks also require that `sudo` knows where the user's `$HOME` is. This can be enabled in the sudoers file.
+Link the included pacman hooks to the system-wide location by creating an appropriate directory`sudo mkdir
+/etc/pacman.d/hooks/` and linking the hooks `sudo ln -f ~/.local/share/pacman/hooks/* /etc/pacman.d/hooks`. The hooks
+also require that `sudo` knows where the user's `$HOME` is. This can be enabled in the sudoers file.
 ```none
 visudo
 ------
