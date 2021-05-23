@@ -5,7 +5,7 @@
     @import 'https://fonts.googleapis.com/css2?family=Fira+Mono';
     @import 'https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap';
     body { font-family: 'Noto Sans', sans-serif; }
-    img {   display: block; margin-left: auto; margin-right: auto; }
+    img { display: block; margin-left: auto; margin-right: auto; }
     pre code, code { font-family: 'Fira Mono', monospace; }
     blockquote { border-left: 4px solid #cccccc; padding: 0px 12px; color: #6b6b6b; }
     h1, h2 { border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.75rem; }
@@ -23,12 +23,15 @@
     .hljs::-webkit-scrollbar { display: none; }
     .hljs { -ms-overflow-style: none; scrollbar-width: none; }
     #toc { margin-bottom: 2vh; }
+    #avatar { margin-bottom: 2vh; }
     p { text-align: justify; }
     @media (min-width: 767px) {
       #toc { order: 3;  }
+      #avatar { order: 3;  }
     }
     @media print {
       #toc { display: none; }
+      #avatar { display: none;  }
       footer { display:none; }
     }
 </style>
@@ -38,6 +41,11 @@
     <div class="col-md-9" style="order: 2" role="main">{% include "content.html" %}</div>
     {% if not page.meta.notoc %}
     <div class="col-md-3" id="toc">{% include "toc.html" %}</div>
+    {% endif %}
+    {% if page.meta.avatar %}
+    <div class="col-md-3" id="avatar">
+    <img src="img/profile.jpg" style="float:center; max-width: 95%;" width="300"/>
+    </div>
     {% endif %}
 {% endblock %}
 

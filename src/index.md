@@ -1,90 +1,79 @@
 ---
 notoc: true
+avatar: true
 ---
-# About
+# About me
+> **Question:** What do coffee filters, constant magnets and the Internet have in common?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum diam id sapien imperdiet posuere. Integer metus
-ante, condimentum non nisl quis, rutrum rutrum felis. Morbi massa tortor, blandit at egestas a, vestibulum eget neque.
-Aenean feugiat, mi et tristique congue, felis turpis lobortis turpis, porttitor mollis ex velit dictum sapien. Integer
-feugiat quam sed nulla eleifend iaculis. Ut facilisis consectetur leo vel convallis. Suspendisse pretium augue eu lectus
-varius pellentesque. Maecenas id est enim. Duis vulputate ante vel sem tincidunt tincidunt.
+> **Answer:** They all undergo type 2 percolation-like phase transition.
 
-Find the `$HOME` variable with
+That is, if you consider the Internet to be a Erdos-Renyi random network. Which *doesn't* really hold up (it's a
+preferential attachment thing), but it *does* make for a nice opening line.
 
-```bash
-$ echo $HOME
-/home/user
-```
-Let's try math: $\tilde{p}(x) = \int\limits_{x_0}^{x_k}p_x \cdot f_{x_y}$
+Hi, my name is Piotr Machura, and I study computer physics at Warsaw University of Technology, currently writing my
+engineer's thesis on information diffusion in complex networks. You may not think that sounds like physics, and you
+would be right. It's beautiful academic name is **interdisciplinary modeling**, which just rolls of the tongue so
+easily along all those Hungarian names.
 
-Quisque posuere, nulla pretium venenatis fringilla, enim justo elementum ante, sed vestibulum diam lectus sit amet leo.
-Nulla facilisi. Integer in pharetra urna. Morbi justo arcu, rutrum eu odio laoreet, fringilla scelerisque nisi.
-Suspendisse potenti. Fusce sodales dapibus fringilla. Sed ornare ante nec luctus molestie.
+In my free time I like to dissect works of fiction and over analyze every little detail, which is a horribly annoying
+habit to have if you like watching TV shows with, say, your girlfriend.
 
-Sed molestie commodo pulvinar. Curabitur sit amet posuere nunc. Nunc finibus nibh a cursus aliquet. Suspendisse
-hendrerit semper odio aliquam scelerisque. Praesent finibus arcu diam, luctus molestie nisi egestas ut. Proin eget arcu
-lorem. Proin et dolor pulvinar, lacinia sapien quis, dignissim arcu. Suspendisse molestie ante ac tortor dignissim
-consequat.
-
-## Subsection one
-
-Vestibulum eros neque, iaculis ut augue et, molestie venenatis nibh.
-
-> Curabitur fringilla sapien in diam condimentum, vitae venenatis dolor commodo.  Pellentesque habitant morbi tristique
-> senectus et netus et malesuada fames ac turpis egestas.  Morbi mollis condimentum lorem ut laoreet.
-
-Vestibulum urna eros, vehicula eget suscipit non, condimentum quis dolor.  Proin elementum lorem quis faucibus aliquam.
-Ut ac odio urna.  In hac habitasse platea dictumst.  Etiam et odio diam.  Morbi id viverra elit, nec interdum mauris.
-Mauris libero purus, ornare at elementum eget, tincidunt sit amet nibh.  Mauris id finibus eros.  Phasellus nec neque
-malesuada, placerat ex vitae, lobortis neque.  Donec euismod pretium tempus.  Morbi in vulputate leo, a interdum nibh.
-
-## Subsection two
-Here we will test out things like __BOLD__, _italics_, ~~strikeout~~ and math
-
+## Favorite equation
+Of course it is the **[divergence theorem](https://en.wikipedia.org/wiki/Divergence_theorem)**, also referred to with
+any combination of names *"Gauss"*, *"Green"*, and *"Ostrogradski"*.
 $$
-\int\limits_0^{+\infty} f(x) dx = \sqrt{\frac{\pi}{2}} 
-\hspace{10pt} \Leftarrow \hspace{10pt}
-f(x) = e^{-x^2}
+\int\limits_V \nabla \cdot \vec{F} \hspace{5pt} dV = \int\limits_{\partial V} \vec{F} \cdot d\vec{s}
 $$
+It's one of those equations where it *looks* like such a cryptic, arbitrary relation, but once you *get it* you know
+that i must obviously be true. Like $1+1=2$ level of true. Arguably the **[generalized Stokes
+theorem](https://en.wikipedia.org/wiki/Generalized_Stokes_theorem)** is prettier, but not as satisfying.
+$$
+\int\limits_\Omega d\omega = \int\limits_{\partial\Omega} \omega
+$$
+Show this to anyone and they will scratch their head wondering what does the $\int$ sign even mean without some sort of
+$dx$ to go with it (hint: it's hidden in the $\omega$). Not nearly as intuitive.
 
-Math delimiters with inline:
-\(y dy = f(x) dx\)
-or even better with \$: for every function $f$ there exists a point $p$ where etc.
+Close second would be the **[Born rule](https://en.wikipedia.org/wiki/Born_rule)** (Born postulate if you are a
+communist), which is the very reason everyone saying: *"Physicists don't use Akham's Razor, just look at quantum
+mechanics!"* is wrong and cannot be trusted.
+$$
+\mathbb{P}(\lambda_i) = \langle \psi \rvert \hat{P_i} \lvert \psi \rangle
+$$
+Just look at it. So pretty. And so intuitive.
 
-also lists
+## Favorite fiction
+Books are hard to choose from. Don't get me wrong, Stephen King is great, but once he goes over the ~150 page limit the
+integrity of any King story starts rapidly going downhill. I still can't shake off the dreaded 20 page character
+dilemmas about a massacre staged by *I know who*. I'm looking at you, *"Needful Things"*, with your pointless catholic
+vs baptist battles (I skipped the whole chapter there) and unsatisfying endings (why would the main character kick the
+devil's ass, am I right? Just let him ride away, he only made half the town murder each other).
 
-1. Item BIG
-2. Item another
-    - subitem of item 2
-    - and antoher one
+**But**, when King keeps his stories short and concise, they can be incredible. *"Big Driver"* (and basically
+anything else from *"Full dark no stars"*) just engraves itself in your brain, you know? You just can't stop reading.
 
-also tables
+Honorable mention goes to *"Silamrillion*" by Tolkien. I like the mythology style, but a narration without a main
+character (and a ~700 page book with barely any dialog) can be just a tad bit boring at times. Or almost all the time,
+if you have an attention span of a 6-year old.
 
-| table | table 2|
-| ----- | ------ |
-| Content. VEEEERY long content indeed. | Shorter content. |
+Favorite show is *"Braking Bad"* (if judged as a whole), or *"The Boys"* if we are allowed to count the first couple of
+episodes. The latter is edgy as hell and I *love it*. When I grow up I want to be just like Jimmy Butcher.
 
-```python
-"""This is a fenced code block with python code"""
-print("Hello, world!")
+When it comes to movies I like *"Whiplash"* the most, the story is just so simple and the characters so concise. If we
+are counting
+🇵🇱
+**Polish**
+🇵🇱
+movies then *"Dzień świra"* somehow manages to be the funniest and most depressing thing I have ever seen.
 
-class NewClass():
-    def __init__(self):
-        self.number = 0
-```
+## Favorite software
+**[Neovim](https://neovim.io/)** and **[Arch Linux](https://archlinux.org/)** are tied for the first place. I just love
+the feeling that noone else has the same environemnt as me. Literally noone on the entire planet, because I made parts
+of it from scratch.
 
-Cras elementum vestibulum lorem nec molestie. Phasellus vitae nisl lacus. Duis ac ipsum ac libero accumsan tristique
-vitae laoreet justo. Sed laoreet posuere orci, ut vulputate justo sollicitudin mollis. Nam ut arcu convallis, rhoncus
-nulla eu, pulvinar sem. Nunc rutrum sapien nisl, id vehicula nulla iaculis quis. Aliquam ullamcorper ipsum ut dui
-imperdiet, ac porta magna molestie. Nulla neque mi, semper in consequat et, viverra nec leo. Curabitur pretium luctus
-dolor, id rhoncus nisl mattis id. Integer lobortis cursus metus a suscipit. Fusce eu magna a leo dictum faucibus. Etiam
-vel lorem vestibulum, vehicula libero vel, fringilla nisl. Quisque vitae quam vel lectus maximus luctus. Vivamus gravida
-nibh ac ligula consequat, a porta tellus iaculis. Mauris id sollicitudin arcu, nec convallis tellus. Aenean consequat
-neque eu mi imperdiet feugiat ac ac diam.
+Dead last would be Microsft Teams. Imagine a video chat client that consumes 50% more RAM idling than my entire operating
+system (seroiusly, it's 600MB of teams doing nothing vs 400MB of Linux doing nothing).
 
-## Subsection three
-
-Ut eget mauris scelerisque erat auctor lacinia non nec odio. Ut nec massa sit amet augue blandit imperdiet eu nec diam.
-Aliquam vel placerat tortor, sit amet mattis ligula. Ut convallis eu nunc in pellentesque. Etiam eget vestibulum lectus.
-Aliquam vulputate imperdiet velit, nec aliquet tellus semper at. Etiam sagittis velit eu nisi tincidunt sollicitudin.
-Donec vehicula faucibus elit, sit amet rutrum elit tempus varius. Etiam ac justo diam. 
+## Social media
+Jokes on you, I have none. There is a link to my GitHub in the navbar and *that's it*. In fact, social media is on my
+**"Things I can't wait for to die"** list, along with shopping malls and gasoline powered cars. But, unlike the other
+two, scoial media is probably sticking around. Forever.

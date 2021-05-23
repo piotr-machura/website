@@ -24,5 +24,4 @@ nav:
   - Projects:
     - 'Arch Linux' : 'arch-setup.md'
     - 'Personal server' : 'personal-server.md'
-  - Contact: 'contact.md'
   - Mail: '/mail'
