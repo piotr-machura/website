@@ -41,6 +41,17 @@ $$
 $$
 Just look at it. So pretty. And so intuitive.
 
+## Favorite software
+**[Neovim](https://neovim.io/)** and **[Arch Linux](https://archlinux.org/)** are tied for the first place. I just love
+the feeling that no one else has the same environment as me. Literally no human on the entire planet, because I made parts
+of it from scratch.
+
+Dead last would be Microsoft Teams. Imagine a video chat client that consumes 50% more RAM idling than my entire operating
+system (seriously, it's 600MB of Teams doing nothing vs 400MB of Linux doing nothing).
+
+Also, I have added a paragraph to a README of an open source ZSH plugin, so I am *technically* and open-source
+contributor. No need to thank me.
+
 ## Favorite fiction
 Books are hard to choose from. Don't get me wrong, Stephen King is great, but once he goes over the ~150 page limit the
 integrity of any King story starts rapidly going downhill. I still can't shake off the dreaded 20 page character
@@ -51,7 +62,7 @@ devil's ass, am I right? Just let him ride away, he only made half the town murd
 **But**, when King keeps his stories short and concise, they can be incredible. *"Big Driver"* (and basically
 anything else from *"Full dark no stars"*) just engraves itself in your brain, you know? You just can't stop reading.
 
-Honorable mention goes to *"Silamrillion*" by Tolkien. I like the mythology style, but a narration without a main
+Honorable mention goes to *"Silmarillion*" by Tolkien. I like the mythology style, but a narration without a main
 character (and a ~700 page book with barely any dialog) can be just a tad bit boring at times. Or almost all the time,
 if you have an attention span of a 6-year old.
 
@@ -65,15 +76,7 @@ are counting
 🇵🇱
 movies then *"Dzień świra"* somehow manages to be the funniest and most depressing thing I have ever seen.
 
-## Favorite software
-**[Neovim](https://neovim.io/)** and **[Arch Linux](https://archlinux.org/)** are tied for the first place. I just love
-the feeling that noone else has the same environemnt as me. Literally noone on the entire planet, because I made parts
-of it from scratch.
-
-Dead last would be Microsft Teams. Imagine a video chat client that consumes 50% more RAM idling than my entire operating
-system (seroiusly, it's 600MB of teams doing nothing vs 400MB of Linux doing nothing).
-
 ## Social media
-Jokes on you, I have none. There is a link to my GitHub in the navbar and *that's it*. In fact, social media is on my
+Jokes on you, I have none. There is a link to my GitHub in the navigation bar and *that's it*. In fact, social media is on my
 **"Things I can't wait for to die"** list, along with shopping malls and gasoline powered cars. But, unlike the other
-two, scoial media is probably sticking around. Forever.
+two, social media is probably sticking around. Forever.
