@@ -81,3 +81,5 @@ thing I have ever seen.
 Jokes on you, I have none. There is a link to my GitHub in the navigation bar and *that's it*. In fact, social media is on my
 **"Things I can't wait for to die"** list, along with shopping malls and gasoline powered cars. But, unlike the other
 two, social media is probably sticking around. Forever.
+
+Thank you for coming to my TED talk.
