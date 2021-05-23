@@ -74,7 +74,8 @@ are counting
 🇵🇱
 **Polish**
 🇵🇱
-movies then *"Dzień świra"* somehow manages to be the funniest and most depressing thing I have ever seen.
+movies then *"Dzień świra"* somehow manages to be the funniest, most quotable and at the same time the most depressing
+thing I have ever seen.
 
 ## Social media
 Jokes on you, I have none. There is a link to my GitHub in the navigation bar and *that's it*. In fact, social media is on my
