@@ -37,7 +37,7 @@ Close second would be the **[Born rule](https://en.wikipedia.org/wiki/Born_rule)
 communist), which is the very reason everyone saying: *"Physicists don't use Akham's Razor, just look at quantum
 mechanics!"* is wrong and cannot be trusted.
 $$
-\mathbb{P}(\lambda_i) = \langle \psi \rvert \hat{P_i} \lvert \psi \rangle
+\mathbb{P}(\lambda_n) = \vert \langle n \vert \psi \rangle \vert^2
 $$
 Just look at it. So pretty. And so intuitive.
 
