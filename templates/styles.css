@@ -5,18 +5,78 @@ body {
     font-family: 'FiraMonoMedium';
     color:#2e3440;
 }
+
+/* Nav */
+nav {
+    margin: 1.25rem auto 1rem;
+    text-align: center;
+}
+nav a {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.25rem;
+    color: inherit;
+    text-decoration: none;
+}
+nav a:before {
+    content: ":: ";
+}
+nav a:after {
+    content: " ::";
+}
+
+/* Content */
 h1, h2, h3 {
-    margin: 0px;
+    margin: 0 0 0.5rem 0;
 }
 h1:before, h2:before, h3:before {
     content: "# ";
 }
+h1 {
+    font-size: 1.75rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
 p {
+    margin-top: 0;
     text-align: justify;
 }
-
+blockquote {
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin: 0 0.75rem 0.5rem;
+}
+blockquote p {
+    margin: 0;
+}
+blockquote p:before {
+    content: "> ";
+}
 .katex-display {
     font-size: 1.1rem !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+footer p {
+    font-size: small;
+    margin: 0;
+    text-align: center;
+}
+
+footer hr {
+    display: block;
+    margin: 0 auto 0.75rem;
+    max-width: 95%;
+    border: 0;
+    border-top: 2px dashed #2e3440;
 }
 
 /* Dark theme */
@@ -25,4 +85,31 @@ p {
       background-color: #2e3440;
       color: #eceff4;
   }
+  hr, pre {
+      border-color: #eceff4 !important;
+  }
 }
+
+/* Responsive design */
+@media only screen and (max-width: 1600px) {
+    body {
+        max-width: 60%;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    body {
+        max-width: 70%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    body {
+        max-width: 80%;
+    }
+}
+@media only screen and (max-width: 760px) {
+    body {
+        max-width: 90%;
+    }
+}
+
+
