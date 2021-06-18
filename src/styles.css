@@ -1,3 +1,28 @@
-* {
-    font-family: 'FiraMonoRegular';
+body {
+    max-width: 50%;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-family: 'FiraMonoMedium';
+    color:#2e3440;
+}
+h1, h2, h3 {
+    margin: 0px;
+}
+h1:before, h2:before, h3:before {
+    content: "# ";
+}
+p {
+    text-align: justify;
+}
+
+.katex-display {
+    font-size: 1.1rem !important;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #2e3440;
+      color: #eceff4;
+  }
 }
