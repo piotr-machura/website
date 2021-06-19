@@ -36,16 +36,22 @@ with open('./site/index.html', 'w') as outfile:
 os.makedirs('./site/blog/', exist_ok=True)
 articles = glob('./src/blog/*')
 articles.remove('./src/blog/index.md')
-meta_list = sorted(
-    [md_compile(file)[1] for file in articles],
-    key=lambda el: datetime.strptime(el['date'][0], "%Y-%m-%d"),
+
+meta_list = list()
+files = list()
+for file in articles:
+    meta_list.append(md_compile(file)[1])
+    files.append('/blog/' + os.path.basename(file).replace('.md', '.html'))
+
+combined = sorted(
+    list(zip(meta_list, files)),
+    key=lambda el: datetime.strptime(el[0]['date'][0], "%Y-%m-%d"),
     reverse=True,
 )
 
-files = [
-    '/blog/' + os.path.basename(file).replace('.md', '.html')
-    for file in articles
-]
+for i, element in enumerate(combined):
+    meta[i] = element[0]
+    files[i] = element[1]
 
 template = template_env.get_template('article.html')
 for article, file in zip(articles, files):
@@ -70,16 +76,22 @@ with open('./site/blog/index.html', 'w') as outfile:
 os.makedirs('./site/projects/', exist_ok=True)
 projects = glob('./src/projects/*')
 projects.remove('./src/projects/index.md')
-meta_list = sorted(
-    [md_compile(file)[1] for file in projects],
-    key=lambda el: datetime.strptime(el['date'][0], "%Y-%m-%d"),
+
+meta_list = list()
+files = list()
+for file in projects:
+    meta_list.append(md_compile(file)[1])
+    files.append('/projects/' + os.path.basename(file).replace('.md', '.html'))
+print(list(zip(meta_list, files)))
+combined = sorted(
+    list(zip(meta_list, files)),
+    key=lambda el: datetime.strptime(el[0]['date'][0], "%Y-%m-%d"),
     reverse=True,
 )
 
-files = [
-    '/projects/' + os.path.basename(file).replace('.md', '.html')
-    for file in projects
-]
+for i, element in enumerate(combined):
+    meta_list[i] = element[0]
+    files[i] = element[1]
 
 template = template_env.get_template('project.html')
 for article, file in zip(projects, files):

@@ -86,7 +86,10 @@ header {
     margin-bottom: 1.5rem;
 }
 header:before {
-    content: "=> ";
+    content: "[ ";
+}
+header:after {
+    content: " ]";
 }
 
 /* Navigation */
@@ -104,19 +107,14 @@ nav a:after{
 
 /* Footer */
 footer {
-    margin: 1.5rem 0;
+    margin: 1.25rem 0;
+    padding-top: 0.75rem;
+    border-top: 2px dashed #2e3440;
 }
 footer p {
+    text-align: center;
     font-size: small;
     margin: 0;
-    text-align: center;
-}
-footer hr {
-    display: block;
-    margin: 0 auto 0.75rem;
-    max-width: 95%;
-    border: 0;
-    border-top: 2px dashed #2e3440;
 }
 
 /* Dark theme */
@@ -128,7 +126,7 @@ footer hr {
     a, a:visited {
         color: #88c0d0;
     }
-    hr, pre {
+    hr, pre, header, footer {
         border-color: #eceff4 !important;
     }
     pre {
