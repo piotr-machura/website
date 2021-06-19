@@ -1,2 +1,14 @@
+Title:        Project Two
+Description:  This is project two
+Repository:   https://example.org
+Date:         2020-03-01
+Authors:      Piotr Machura
+              et al
+
 # Heading of project two
-Sed euismod non est id faucibus. Curabitur libero odio, lacinia vel efficitur nec, dapibus a lectus. Curabitur tincidunt nulla tellus, vitae cursus risus ornare aliquam. Donec sodales eleifend purus, et dapibus est tincidunt a. Morbi placerat lectus non arcu faucibus, at rutrum est tempus. Donec pulvinar faucibus quam vitae ornare. Duis quis dictum erat. Suspendisse sagittis turpis a lectus commodo, eget rutrum libero dapibus. Suspendisse lacinia in nibh eu blandit. Quisque a leo nisl. Aenean varius aliquam libero vel pretium. Aenean nibh neque, tempus nec justo a, luctus tristique enim. 
+Sed euismod non est id faucibus. Curabitur libero odio, lacinia vel efficitur nec, dapibus a lectus. Curabitur tincidunt
+nulla tellus, vitae cursus risus ornare aliquam. Donec sodales eleifend purus, et dapibus est tincidunt a. Morbi
+placerat lectus non arcu faucibus, at rutrum est tempus. Donec pulvinar faucibus quam vitae ornare. Duis quis dictum
+erat. Suspendisse sagittis turpis a lectus commodo, eget rutrum libero dapibus. Suspendisse lacinia in nibh eu blandit.
+Quisque a leo nisl. Aenean varius aliquam libero vel pretium. Aenean nibh neque, tempus nec justo a, luctus tristique
+enim. 

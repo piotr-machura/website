@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+<a href="{{ meta['repository'][0] }}">Source code</a>
+</header>
+{{ content }}
+<nav>
+<a href=".">Go back</a>
+</nav>
+{% endblock %}

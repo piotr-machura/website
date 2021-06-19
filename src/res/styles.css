@@ -6,22 +6,22 @@ body {
     color:#2e3440;
 }
 
-/* Nav */
-nav {
+/* Site brand */
+.banner {
     margin: 1.25rem auto 1rem;
     text-align: center;
 }
-nav a {
+.banner a {
     display: inline-block;
     margin: 0;
     font-size: 1.25rem;
     color: inherit !important;
     text-decoration: none;
 }
-nav a:before {
+.banner a:before {
     content: ":: ";
 }
-nav a:after {
+.banner a:after {
     content: " ::";
 }
 
@@ -68,16 +68,43 @@ blockquote p {
 blockquote p:before {
     content: "> ";
 }
+ul {
+    padding-left: 1.25rem;
+}
+ul li {
+    list-style-type: "- "
+}
 .katex-display {
     font-size: 1.1rem !important;
     overflow-x: auto;
     overflow-y: hidden;
 }
+header {
+    border-bottom: 2px dashed #2e3440;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+header:before {
+    content: "=> ";
+}
+
+/* Navigation */
+nav {
+    margin: 1rem 0;
+    display: block;
+    text-align: center;
+}
+nav a:before{
+    content: "< ";
+}
+nav a:after{
+    content: " >";
+}
 
 /* Footer */
 footer {
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
 }
 footer p {
     font-size: small;
@@ -128,6 +155,9 @@ footer hr {
 @media only screen and (max-width: 760px) {
     body {
         max-width: 90%;
+    }
+    nav {
+        display: grid;
     }
 }
 
