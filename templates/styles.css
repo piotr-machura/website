@@ -1,7 +1,7 @@
 body {
     max-width: 50%;
     margin: 0 auto;
-    line-height: 1.7;
+    line-height: 1.75;
     font-family: 'FiraMonoMedium';
     color:#2e3440;
 }
@@ -15,7 +15,7 @@ nav a {
     display: inline-block;
     margin: 0;
     font-size: 1.25rem;
-    color: inherit;
+    color: inherit !important;
     text-decoration: none;
 }
 nav a:before {
@@ -32,6 +32,10 @@ h1, h2, h3 {
 h1:before, h2:before, h3:before {
     content: "# ";
 }
+a, a:visited {
+    text-decoration: none;
+    color: #5e81ac;
+}
 h1 {
     font-size: 1.75rem;
 }
@@ -39,14 +43,24 @@ h2 {
     font-size: 1.5rem;
 }
 p {
-    margin-top: 0;
+    margin: 0 0 0.75rem;
     text-align: justify;
+}
+pre {
+    overflow-x: auto;
+    background: #eceff4;
+    display: block;
+    margin: 0 0.5em 0.75rem;
+    padding: 0.75rem 0.75rem;
+    border: 2px dotted #2e3440;
+}
+code {
+    font-family: "FiraMonoMedium";
 }
 blockquote {
     white-space: nowrap;
     overflow-x: auto;
-    padding-bottom: 0.5rem;
-    margin: 0 0.75rem 0.5rem;
+    margin: 0 0.75rem 0.75rem;
 }
 blockquote p {
     margin: 0;
@@ -70,7 +84,6 @@ footer p {
     margin: 0;
     text-align: center;
 }
-
 footer hr {
     display: block;
     margin: 0 auto 0.75rem;
@@ -81,13 +94,19 @@ footer hr {
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
-  body {
-      background-color: #2e3440;
-      color: #eceff4;
-  }
-  hr, pre {
-      border-color: #eceff4 !important;
-  }
+    body {
+        background-color: #2e3440;
+        color: #eceff4;
+    }
+    a, a:visited {
+        color: #88c0d0;
+    }
+    hr, pre {
+        border-color: #eceff4 !important;
+    }
+    pre {
+        background: #434c5e;
+    }
 }
 
 /* Responsive design */
