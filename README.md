@@ -1,4 +1,4 @@
-# Personal website source
+# ⚠️ This is and old version ⚠️
 This is my personal website, built with [MkDocs](https://mkdocs.org). It contains whatever I feel like throwing on
 there.
 
