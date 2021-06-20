@@ -57,6 +57,8 @@ h3 {
 p {
     margin: 0 0 1rem;
     text-align: justify;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 pre {
     overflow-x: auto;
@@ -198,7 +200,7 @@ footer p {
 }
 @media only screen and (max-width: 760px) {
     body {
-        max-width: 90%;
+        max-width: 92.5%;
     }
     nav {
         display: grid;

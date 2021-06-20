@@ -7,7 +7,7 @@ Date:         2021-04-18
 
 ![Docker logo](/res/img/docker_logo.png)
 
-~~The goal~~ of this project is to create a personal server that will host a static website, fully capable email stack and a
+The goal of this project is to create a personal server that will host a static website, fully capable email stack and a
 webmail client. Docker makes the process of configuration and deployment faster and tidier, allowing us to construct the
 server from *almost* ready-to-go parts. It also makes the installation pretty much host-independent, as in the host's
 operating system does not matter as long as docker engine and docker-compose are available.
