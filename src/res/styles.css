@@ -139,9 +139,6 @@ nav {
     display: block;
     text-align: center;
 }
-nav a, nav a:before, nav a:after {
-    font-size: 1.2rem;
-}
 nav a:before{
     content: "< ";
 }
