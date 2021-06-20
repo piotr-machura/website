@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ content }}
+<ul>
+{% for project in listing %}
+<li><b><a href="{{ './' + project.basename  }}" style="font-size: large;">{{ project.meta['title'] }}</a></b>
+:: {{ project.meta['description'] }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block nav %}
+<a href="..">Go back</a>
+{% endblock %}

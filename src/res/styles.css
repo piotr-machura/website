@@ -98,6 +98,9 @@ nav {
     display: block;
     text-align: center;
 }
+nav a, nav a:before, nav a:after {
+    font-size: large;
+}
 nav a:before{
     content: "< ";
 }

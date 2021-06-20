@@ -1,113 +1,85 @@
-import os
+from os import makedirs
+from os.path import relpath, basename
 from glob import glob
 from datetime import datetime
-from shutil import copytree
+from shutil import rmtree, copytree
 from markdown import Markdown
-import jinja2
-
-template_loader = jinja2.FileSystemLoader(searchpath="./templates")
-template_env = jinja2.Environment(loader=template_loader)
+from jinja2 import Environment, FileSystemLoader as fsl
 
 
-def md_compile(inpath):
-    markdown = Markdown(extensions=['meta'])
-    with open(inpath) as infile:
-        return markdown.convert(infile.read()), markdown.Meta
+class Document:
+    env = Environment(loader=fsl(searchpath="./templates"))
+
+    def __init__(self, path):
+        self.path = ('./site/' + relpath(path, './src')).replace(
+            '.md', '.html')
+        self.basename = basename(self.path)
+        with open(path) as f:
+            md = Markdown(extensions=['meta'])
+            self.content = md.convert(f.read())
+            self.meta = md.Meta
+        for el in self.meta:
+            self.meta[el] = ' '.join(self.meta[el])
+
+    @classmethod
+    def render_static(cls, template_name, path, **kwargs):
+        with open(path, 'w') as f:
+            f.write(cls.env.get_template(template_name).render(**kwargs))
+
+    def render(self, template, **kwargs):
+        with open(self.path, 'w') as f:
+            f.write(
+                self.env.get_template(template).render(
+                    content=self.content,
+                    meta=self.meta,
+                    **kwargs,
+                ),
+            )
 
 
-# Copy resources
-copytree('./src/res', './site/res', dirs_exist_ok=True)
+if __name__ == '__main__':
+    # Prepare file tree
+    rmtree('./site/')
+    makedirs('./site/projects/')
+    makedirs('./site/blog/')
+    makedirs('./site/writing/')
+    copytree('./src/res', './site/res')
 
-# Compile 404 page
-template = template_env.get_template('404.html')
-with open('./site/404.html', 'w') as outfile:
-    outfile.write(template.render())
+    # Render 404 page
+    Document.render_static('404.html', './site/404.html')
 
-# Compile homepage
-content, meta = md_compile('./src/index.md')
-template = template_env.get_template('home.html')
-with open('./site/index.html', 'w') as outfile:
-    outfile.write(template.render(
-        meta=meta,
-        content=content,
-    ))
+    # Render homepage
+    home = Document('./src/index.md')
+    home.render(template='home.html')
 
-# Compile articles
-os.makedirs('./site/blog/', exist_ok=True)
-articles = glob('./src/blog/*')
-articles.remove('./src/blog/index.md')
+    # Compile blog
+    articles = glob('./src/blog/*')
+    articles.remove('./src/blog/index.md')
+    articles = sorted(
+        [Document(article) for article in articles],
+        key=lambda el: datetime.strptime(el.meta['date'], "%Y-%m-%d"),
+        reverse=True,
+    )
+    for article in articles:
+        article.render(template='article.html')
 
-meta_list = list()
-files = list()
-for file in articles:
-    meta_list.append(md_compile(file)[1])
-    files.append('/blog/' + os.path.basename(file).replace('.md', '.html'))
+    blog = Document('./src/blog/index.md')
+    blog.render(template='blog.html', listing=articles)
 
-combined = sorted(
-    list(zip(meta_list, files)),
-    key=lambda el: datetime.strptime(el[0]['date'][0], "%Y-%m-%d"),
-    reverse=True,
-)
+    # Render projects
+    projects = glob('./src/projects/*')
+    projects.remove('./src/projects/index.md')
+    projects = sorted(
+        [Document(project) for project in projects],
+        key=lambda el: datetime.strptime(el.meta['date'], "%Y-%m-%d"),
+        reverse=True,
+    )
+    for project in projects:
+        project.render(template='project.html')
 
-for i, element in enumerate(combined):
-    meta[i] = element[0]
-    files[i] = element[1]
+    proj_idx = Document('./src/projects/index.md')
+    proj_idx.render(template='projects.html', listing=projects)
 
-template = template_env.get_template('article.html')
-for article, file in zip(articles, files):
-    with open('./site' + file, 'w') as outfile:
-        content, meta = md_compile(article)
-        outfile.write(template.render(
-            meta=meta,
-            content=content,
-        ))
-
-template = template_env.get_template('article_index.html')
-content, meta = md_compile('./src/blog/index.md')
-with open('./site/blog/index.html', 'w') as outfile:
-    outfile.write(
-        template.render(
-            meta=meta,
-            content=content,
-            listing=zip(files, meta_list),
-        ))
-
-# Compile projects
-os.makedirs('./site/projects/', exist_ok=True)
-projects = glob('./src/projects/*')
-projects.remove('./src/projects/index.md')
-
-meta_list = list()
-files = list()
-for file in projects:
-    meta_list.append(md_compile(file)[1])
-    files.append('/projects/' + os.path.basename(file).replace('.md', '.html'))
-print(list(zip(meta_list, files)))
-combined = sorted(
-    list(zip(meta_list, files)),
-    key=lambda el: datetime.strptime(el[0]['date'][0], "%Y-%m-%d"),
-    reverse=True,
-)
-
-for i, element in enumerate(combined):
-    meta_list[i] = element[0]
-    files[i] = element[1]
-
-template = template_env.get_template('project.html')
-for article, file in zip(projects, files):
-    with open('./site' + file, 'w') as outfile:
-        content, meta = md_compile(article)
-        outfile.write(template.render(
-            meta=meta,
-            content=content,
-        ))
-
-template = template_env.get_template('project_index.html')
-content, meta = md_compile('./src/projects/index.md')
-with open('./site/projects/index.html', 'w') as outfile:
-    outfile.write(
-        template.render(
-            meta=meta,
-            content=content,
-            listing=zip(files, meta_list),
-        ))
+    # Render writing page
+    writing = Document('./src/writing/index.md')
+    writing.render(template='writing.html')
