@@ -140,7 +140,7 @@ nav {
     text-align: center;
 }
 nav a, nav a:before, nav a:after {
-    font-size: large;
+    font-size: 1.2rem;
 }
 nav a:before{
     content: "< ";
@@ -199,8 +199,11 @@ footer p {
     }
 }
 @media only screen and (max-width: 760px) {
+    html {
+        font-size: 87.5%;
+    }
     body {
-        max-width: 92.5%;
+        max-width: 90%;
     }
     nav {
         display: grid;
