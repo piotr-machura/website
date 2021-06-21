@@ -1,3 +1,5 @@
+Title:        Creative writing
+Description:  Piotr Machura's creative writing
 # Creative writing
 ### Warning:
 You are entering the &#127477&#127473 **GLORIOUS POLAND** &#127477&#127473 zone. I write in polish, so turn

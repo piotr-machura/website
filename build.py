@@ -55,8 +55,14 @@ if __name__ == '__main__':
     makedirs('./site/writing/')
     copytree('./src/res', './site/res')
 
-    # Render 404 page
-    Document.render_static('404.html', './site/404.html')
+    # Render error pages
+    for code in ['403', '404', '500', '502', '503', '504']:
+        Document.render_static(
+            'error.html',
+            './site/' + code + '.html',
+            code=code,
+            redirect=(int(code) < 500), # Redirect 400 codes to home
+        )
 
     # Render homepage
     home = Document('./src/index.md')

@@ -4,8 +4,6 @@ Repository:   https://github.com/piotr-machura/arch-setup/
 Date:         2021-02-21
 
 # Arch Linux setup
-![Arch Linux logo](/res/img/arch.png)
-
 Setting up Arch Linux is not exactly difficult, but tedious none the less. And the more you customize it the more steps
 there are to remember, so after two Virtual Box and one bare-metal installations I have decided to leave myself a rope
 in the form of this repository, containing the setup of my machine, should I ever need to reproduce it in its entirety.
