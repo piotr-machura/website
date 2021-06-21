@@ -32,14 +32,8 @@ article {
 h1, h2, h3 {
     margin: 1rem 0 0.5rem;
 }
-h1:before {
+h1:before, h2:before {
     content: "# ";
-}
-h2:before {
-    content: "## ";
-}
-h3:before {
-    content: "### ";
 }
 a, a:visited {
     text-decoration: none;
@@ -209,5 +203,3 @@ footer p {
         display: grid;
     }
 }
-
-

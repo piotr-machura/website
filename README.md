@@ -2,7 +2,7 @@
 This is the source for my personal website. It contains whatever I feel like throwing on there.
 
 It is built from markdown files using [python-markdown](https://pypi.org/project/Markdown/) and
-[jinja2](https://pypi.org/project/Jinja2/) template engine. 
+[jinja2](https://pypi.org/project/Jinja2/) template engine. The only JavaScript used is [KaTeX](https://katex.org/).
 
 ### Installation
 After puling with git run `pip install -r requirements.txt` (preferably in a virtual environment) to install build dependencies.

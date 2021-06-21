@@ -14,7 +14,7 @@ you have three options:
 You know me, I was in the 3rd "DIY, no bloat, no javascript" crew, spending hours upon hours trying to build do own
 thing by copying a "template" *(foreshadowing?)* HTML file and populating it's contents.
 
-Eventually, though, I decided to forfeit my software purism and use a static site generator. you know, a thing that
+Eventually, though, I decided to forfeit my software purism and use a static site generator. You know, a thing that
 takes some markdown files and lumps them together, adding css and js along the way. It would seem that this is the
 perfect solution - simple, but fully featured.
 
@@ -37,7 +37,7 @@ write a new markdown file and run the build command.
 Soo… Can we do better? Yes. Yes we can.
 
 ## Templates are easy
-There is an old saying that programmers don't do thing because they are easy, bu because they *thought* they were easy.
+There is an old saying that programmers don't do thing because they are easy, but because they *thought* they were easy.
 The solution to my website problem turned out to be quite the opposite - as it turns out, templates really are just that
 easy.
 
@@ -49,8 +49,8 @@ I do.
 It has also made it clear to me why people like python so much. It allows you to hack together a solution to a problem
 that does not require neither speed nor excessive control over details like memory management. You can have a website
 generator up and running with two imports ([python-markdown](https://pypi.org/project/Markdown/) and
-[Jinja](https://pypi.org/project/Jinja2/) and a total of ~70 lines of code. This is the kind of scenario where python
-excels - short development time and a wide array of ready-to-go solutions to high level problems like this one.
+[Jinja2](https://pypi.org/project/Jinja2/)) and a total of ~70 lines of code. This is the kind of scenario where python
+shines - short development time and a wide array of ready-to-go solutions to high level problems like this one.
 
 As a side note, my girlfriend is not a fan of the new style. Quote:
 
@@ -58,4 +58,4 @@ As a side note, my girlfriend is not a fan of the new style. Quote:
 
 > Like there's been an error, or something.
 
-Not everyone likes the minimalist style. Or doing everything by yourself. And that's ok.
+Not everyone likes the minimalist style, or doing everything by yourself, and that's ok. But I do.
