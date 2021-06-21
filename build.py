@@ -10,7 +10,7 @@ from os import makedirs
 from os.path import relpath, basename
 from glob import glob
 from datetime import datetime
-from shutil import rmtree, copytree
+from shutil import rmtree, copytree, copy
 from markdown import Markdown
 from jinja2 import Environment, FileSystemLoader as fsl
 # pylint: disable=C0115, C0103, C0116
@@ -93,3 +93,8 @@ if __name__ == '__main__':
     # Render writing page
     writing = Document('./src/writing/index.md')
     writing.render(template='writing.html')
+
+    # Uncomment to copy writing samples
+    # for pdf in glob('./src/writing/*pdf'):
+    #     dest = pdf.replace('./src/', './site/')
+    #     copy(pdf, dest)

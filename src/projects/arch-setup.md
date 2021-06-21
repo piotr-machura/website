@@ -1,5 +1,5 @@
-Title:        Arch setup
-Description:  BTW I use arch
+Title:        Arch Linux setup
+Description:  BTW I use arch. Did you know that I use arch?
 Repository:   https://github.com/piotr-machura/arch-setup/
 Date:         2021-02-21
 
