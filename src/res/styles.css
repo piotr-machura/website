@@ -78,6 +78,7 @@ blockquote {
     white-space: nowrap;
     overflow-x: auto;
     margin: 0 0.75rem 0.75rem;
+    color: #4c566a;
 }
 blockquote p {
     margin: 0;
@@ -163,6 +164,9 @@ footer p {
     body {
         background-color: #2e3440;
         color: #eceff4;
+    }
+    blockquote {
+        color: #d8dee9;
     }
     a, a:visited {
         color: #88c0d0;
