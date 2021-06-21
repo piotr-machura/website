@@ -3,7 +3,7 @@ body {
     margin: 0 auto;
     line-height: 1.75;
     font-family: 'FiraMonoMedium';
-    color:#2e3440;
+    color: #2e3440;
 }
 
 /* Site brand */
@@ -60,12 +60,14 @@ p {
     word-wrap: break-word;
     word-break: break-word;
 }
-pre {
+pre, blockquote {
     overflow-x: auto;
-    background: #eceff4;
     display: block;
     margin: 0 0.5em 1rem;
+}
+pre {
     padding: 0.75rem 0.75rem;
+    background: #eceff4;
     border: 2px dotted #2e3440;
 }
 code {
@@ -75,16 +77,12 @@ code {
     font-size: 0.9rem;
 }
 blockquote {
-    white-space: nowrap;
-    overflow-x: auto;
-    margin: 0 0.75rem 0.75rem;
+    padding-left: 0.5rem;
     color: #4c566a;
+    border-left: 0.35rem solid #e5e9f0;
 }
 blockquote p {
     margin: 0;
-}
-blockquote p:before {
-    content: "> ";
 }
 ul {
     padding-left: 1.25rem;
@@ -167,6 +165,7 @@ footer p {
     }
     blockquote {
         color: #d8dee9;
+        border-color: #4c566a;
     }
     a, a:visited {
         color: #88c0d0;
