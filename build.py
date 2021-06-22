@@ -6,11 +6,10 @@ website in the ./site directory.
 **WARNING:** All contents of ./site will be deleted.
 """
 
-from os import makedirs
 from os.path import relpath, basename
 from glob import glob
 from datetime import datetime
-from shutil import rmtree, copytree, copy
+from shutil import rmtree, copytree, ignore_patterns
 from markdown import Markdown
 from jinja2 import Environment, FileSystemLoader as fsl
 # pylint: disable=C0115, C0103, C0116
@@ -50,10 +49,7 @@ class Document:
 if __name__ == '__main__':
     # Prepare file tree
     rmtree('./site/')
-    makedirs('./site/projects/')
-    makedirs('./site/blog/')
-    makedirs('./site/writing/')
-    copytree('./src/res', './site/res')
+    copytree('./src', './site', ignore=ignore_patterns('*.md', '*.pdf'))
 
     # Render error pages
     for code in ['403', '404', '500', '502', '503', '504']:
@@ -69,7 +65,7 @@ if __name__ == '__main__':
     home.render(template='home.html')
 
     # Render blog
-    articles = glob('./src/blog/*')
+    articles = glob('./src/blog/*.md')
     articles.remove('./src/blog/index.md')
     articles = sorted(
         [Document(article) for article in articles],
@@ -83,7 +79,7 @@ if __name__ == '__main__':
     blog.render(template='listing.html', listing=articles, date=True)
 
     # Render projects
-    projects = glob('./src/projects/*')
+    projects = glob('./src/projects/*.md')
     projects.remove('./src/projects/index.md')
     projects = sorted(
         [Document(project) for project in projects],
@@ -99,8 +95,3 @@ if __name__ == '__main__':
     # Render writing page
     writing = Document('./src/writing/index.md')
     writing.render(template='writing.html')
-
-    # Uncomment to copy writing samples
-    # for pdf in glob('./src/writing/*pdf'):
-    #     dest = pdf.replace('./src/', './site/')
-    #     copy(pdf, dest)

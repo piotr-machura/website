@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<header><a href="{{ meta['repository'] }}" target="_blank">Source code</a></header>
+<header><a href="{{ meta['repository'] }}" target="_blank">Source repository</a></header>
+<article>
 {{ content }}
+</article>
 {% endblock %}
 
 {% block nav %}
 <a href=".">Go back</a>
-</nav>
 {% endblock %}

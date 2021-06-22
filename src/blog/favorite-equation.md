@@ -2,7 +2,7 @@ Title:        Favorite equation
 Description:  Of course it's the divergence theorem
 Date:         2021-05-18
 
-# Favorite equation
+# Favorite equation equation equation aaa
 The **[divergence theorem](https://en.wikipedia.org/wiki/Divergence_theorem)**, also referred to with
 any combination of names *"Gauss"*, *"Green"*, and *"Ostrogradski"*.
 

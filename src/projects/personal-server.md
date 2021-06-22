@@ -5,7 +5,7 @@ Date:         2021-04-18
 
 # Personal server
 
-![Docker logo](/res/img/docker_logo.png)
+![Docker logo](./img/docker_logo.png)
 
 We will use the following open source software to create our server:
 
@@ -19,7 +19,7 @@ We will use the following open source software to create our server:
 A simplified schema of the server is portrayed below, keep in mind all of the software will be running in their own
 respective Docker conatiners.
 
-<img style="background-color: white;" src="/res/img/server_diagram.png" alt="Simplified server diagram"></img>
+<img style="background-color: white;" src="./img/server_diagram.png" alt="Simplified server diagram"></img>
 
 # Setting up the server
 The following notation will be used:
