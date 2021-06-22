@@ -1,7 +1,7 @@
 body {
     max-width: 50%;
     margin: 0 auto;
-    line-height: 1.75;
+    line-height: 1.5;
     font-family: 'FiraMonoMedium';
     color: #2e3440;
 }
@@ -205,7 +205,7 @@ footer p {
 }
 @media only screen and (max-width: 760px) {
     html {
-        font-size: 87.5%;
+        font-size: 95%;
     }
     body {
         max-width: 90%;
