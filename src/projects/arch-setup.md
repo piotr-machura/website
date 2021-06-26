@@ -19,7 +19,7 @@ And i **really** mean entirety, down to every currently installed program.
 - **PDF viewer:** [Zathura](https://pwmt.org/projects/zathura/)
 - **Color scheme:** [Nord](https://www.nordtheme.com/)
 - **Font:** [Noto Sans](https://fontlibrary.org/en/font/noto-sans)
-- **Monospace font:** [Fira Mono](https://fontlibrary.org/en/font/fira-mono)
+- **Mono space font:** [Fira Mono](https://fontlibrary.org/en/font/fira-mono)
 
 A complete list of all installed software is available under `~/.local/share/pacman/PKGLIST`.
 
@@ -31,5 +31,5 @@ A complete list of all installed software is available under `~/.local/share/pac
 
 ## Using the repository 
 The master branch of the repository directly tracks the changes made to the config files, with the project root in my
-home directory. As such I don't want it to contain a README, license and other repo-specific things. You can find those
-on the [docs](https://github.com/piotr-machura/arch-setup/tree/docs) branch.
+home directory. As such I don't want it to contain a README, license and other repo-specific things, so they are kept on
+a master branch (which is displayed by default) and actual configuration files can be found on the "dots" branch. 

@@ -4,6 +4,7 @@ body {
     line-height: 1.5;
     font-family: 'FiraMonoMedium';
     color: #2e3440;
+    background-color: white;
 }
 
 /* Site brand */
@@ -69,7 +70,7 @@ code {
     font-size: 0.9rem;
 }
 blockquote {
-    padding-left: 0.5rem;
+    padding-left: 0.75rem;
     color: #4c566a;
     border-left: 0.35rem solid #e5e9f0;
 }

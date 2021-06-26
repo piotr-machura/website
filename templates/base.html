@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{{ meta['title'] }}</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="{{ meta['description'] }}">
-  <link rel="shortcut icon" href="/res/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="https://fontlibrary.org//face/fira-mono">
-  <link rel="stylesheet" type="text/css" href="/res/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity=
-  "sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity=
-  "sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity=
-  "sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload=
-  "renderMathInElement(document.body);"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-        delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false},
-        ],
-        throwOnError : false
-      });
-    });
-  </script>
+<title>{{ meta['title'] }} :: Piotr Machura</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{{ meta['description'] }}">
+<link rel="shortcut icon" href="/res/favicon.ico">
+<link rel="stylesheet" type="text/css" href="https://fontlibrary.org//face/fira-mono">
+<link rel="stylesheet" type="text/css" href="/res/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity=
+"sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity=
+"sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity=
+"sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload=
+"renderMathInElement(document.body);"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+    ],
+    throwOnError : false
+  });
+});
+</script>
 </head>
 <body>
-  <div class="banner">
-    <a href="/">Piotr Machura</a>
-  </div>
-  {% block content %}
-  {% endblock %}
-  <nav>
-    {% block nav %}
-    {% endblock %}
-  </nav>
-  <footer>
-    <p>© Piotr Machura 2021.<br>
-    Source: <a href="https://mit-license.org/">MIT</a>. Content: <a href=
-    "https://creativecommons.org/licenses/by/4.0/">CC BY</a>.</p>
-  </footer>
+<div class="banner" role="landmark">
+<a href="/">Piotr Machura</a>
+</div>
+{% block content %}
+{% endblock %}
+<nav>
+{% block nav %}
+{% endblock %}
+</nav>
+<footer>
+<p>© Piotr Machura 2021.<br>
+Source: <a href="https://mit-license.org/">MIT</a>. Content: <a href=
+"https://creativecommons.org/licenses/by/4.0/">CC BY</a>.</p>
+</footer>
 </body>
 </html>

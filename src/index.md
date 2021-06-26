@@ -1,4 +1,4 @@
-Title:        Piotr Machura
+Title:        Home
 Description:  Piotr Machura's webpage
 
 # About me 

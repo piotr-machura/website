@@ -9,11 +9,11 @@ After puling with git run `pip install -r requirements.txt` (preferably in a vir
 Serve locally with `python3 -m http.server --directory ./site`.
 
 ### Deploying with rsync after every commit
-Create a hook at `./git/hooks/post-commit`:
+Create a `deploy.sh` bash script 
 ```bash
 #!/bin/bash -xe
 python3 build.py
 rsync --archive --compress --partial --delete \
     site/ user@hostname:/path/to/my/site/
 ```
-Do not forget to run `chmod +x ./.git/hooks/post-commit`.
+Run `chmod +x deploy.sh` and link it to git hook directory `ln -s deploy.sh .git/hooks/post-commit`.
