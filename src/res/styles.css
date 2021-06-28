@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap');
+
 body {
     max-width: 50%;
     margin: 0 auto;
     line-height: 1.5;
-    font-family: 'FiraMonoMedium';
     color: #2e3440;
     background-color: white;
+    font-family: 'Fira Mono';
+    font-weight: 500;
 }
 
 /* Site brand */
@@ -27,6 +30,9 @@ body {
 }
 
 /* Content */
+article, main {
+    font-weight: 400;
+}
 h1, h2 {
     margin: 1rem 0 0.5rem;
 }
@@ -66,7 +72,7 @@ pre {
 code {
     background: #eceff4;
     padding: 0.1rem 0.25rem;
-    font-family: "FiraMonoMedium";
+    font-family: 'FiraMonoMedium';
     font-size: 0.9rem;
 }
 blockquote {
@@ -77,7 +83,7 @@ blockquote {
 blockquote p {
     margin: 0;
 }
-ul {
+ul, ol {
     padding-left: 1.25rem;
 }
 ul li {
