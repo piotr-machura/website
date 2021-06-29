@@ -1,5 +1,5 @@
 Title:        Novel concepts in your story
-Description:  To explain, or not to explain?
+Description:  Exposition? I don't think so.
 Date:         2021-06-28
 
 # Novel concepts in your story

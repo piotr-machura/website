@@ -25,9 +25,9 @@ A complete list of all installed software is available under `~/.local/share/pac
 
 ## Screenshots
 
-![Screenshot 1](./img/ss_1.png)
+![Screenshot 1](./img/ss_1.jpg)
 
-![Screenshot 2](./img/ss_2.png)
+![Screenshot 2](./img/ss_2.jpg)
 
 ## Using the repository 
 The master branch of the repository directly tracks the changes made to the config files, with the project root in my

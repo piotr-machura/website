@@ -4,9 +4,6 @@ Repository:   https://github.com/piotr-machura/personal-server/
 Date:         2021-04-18
 
 # Personal server
-
-![Docker logo](./img/docker_logo.png)
-
 We will use the following open source software to create our server:
 
 - **Web server:** [nginx](https://nginx.org/), modified to include [certbot](https://certbot.eff.org) for ease of
@@ -19,7 +16,7 @@ We will use the following open source software to create our server:
 A simplified schema of the server is portrayed below, keep in mind all of the software will be running in their own
 respective Docker conatiners.
 
-<img style="background-color: white;" src="./img/server_diagram.png" alt="Simplified server diagram"></img>
+![Simplified server diagram](./img/server_diagram.jpg)
 
 # Setting up the server
 The following notation will be used:
