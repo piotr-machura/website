@@ -1,6 +1,6 @@
 Title:        This very website
 Description:  Yes, the one you're on right now
-Repository:   https://github.com/piotr-machura/website/
+Repository:   https://sr.ht/~piotr-machura/website/
 Date:         2021-06-19
 
 # This very website
