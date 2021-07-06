@@ -18,8 +18,8 @@ And i **really** mean entirety, down to every currently installed program.
 - **Browser:** [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - **PDF viewer:** [Zathura](https://pwmt.org/projects/zathura/)
 - **Color scheme:** [Nord](https://www.nordtheme.com/)
-- **Font:** [Noto Sans](https://fontlibrary.org/en/font/noto-sans)
-- **Mono space font:** [Fira Mono](https://fontlibrary.org/en/font/fira-mono)
+- **Font:** [Rubik](https://fontlibrary.org/en/font/rubik)
+- **Mono space font:** [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
 A complete list of all installed software is available under `~/.local/share/pacman/PKGLIST`.
 
@@ -28,6 +28,8 @@ A complete list of all installed software is available under `~/.local/share/pac
 ![Screenshot 1](./img/ss_1.jpg)
 
 ![Screenshot 2](./img/ss_2.jpg)
+
+![Screenshot 3](./img/ss_3.jpg)
 
 ## Using the repository 
 The master branch of the repository directly tracks the changes made to the config files, with the project root in my

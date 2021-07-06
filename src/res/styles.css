@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-* {
-    font-family: 'Fira Mono', monospace;
-}
 body {
     max-width: 50%;
     margin: 0 auto;
     line-height: 1.5;
     color: #2e3440;
     background-color: white;
+    font-family: 'Rubik', sans-serif;
 }
 
 /* Site brand */
@@ -51,6 +51,9 @@ h3 {
     margin: 1rem 0 0.25rem;
     font-size: 1.125rem;
 }
+b, strong {
+    font-weight: 500;
+}
 p {
     margin: 0 0 1rem;
     text-align: justify;
@@ -74,11 +77,13 @@ pre {
 code {
     background: #eceff4;
     padding: 0.1rem 0.25rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
 }
 pre code {
     padding: 0;
+    font-size: 0.9rem;
 }
 blockquote {
     padding-left: 0.75rem;
