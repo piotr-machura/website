@@ -5,7 +5,7 @@
     font-style: normal;
 }
 body {
-    max-width: 50%;
+    max-width: 40%;
     margin: 0 auto;
     line-height: 1.5;
     color: #2e3440;
@@ -198,12 +198,12 @@ footer p {
 /* Responsive */
 @media only screen and (max-width: 1600px) {
     body {
-        max-width: 60%;
+        max-width: 50%;
     }
 }
 @media only screen and (max-width: 1300px) {
     body {
-        max-width: 70%;
+        max-width: 60%;
     }
 }
 @media only screen and (max-width: 1000px) {
@@ -212,7 +212,7 @@ footer p {
         overflow-x: auto;
     }
     body {
-        max-width: 80%;
+        max-width: 75%;
     }
 }
 @media only screen and (max-width: 760px) {
