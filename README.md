@@ -11,11 +11,25 @@ Serve locally with `python3 -m http.server --directory ./site`.
 ### Deploying with rsync
 Create a `deploy.sh` bash script 
 ```bash
-#!/bin/bash -xe
+#!/bin/bash
 source ./.venv/bin/activate # Optional: activate the virtual environment
+set -xe
 python3 build.py
 rsync --archive --compress --partial --delete \
     site/ user@hostname:/path/to/my/site/
 ```
 Do not forget to `chmod +x deploy.sh`. In order to deploy automatically after ever commit link it to git hook directory
 `ln -s deploy.sh .git/hooks/post-commit`.
+
+### Deploying to Sourcehut pages
+Create a `deploy.sh` bash script 
+```bash
+#!/bin/bash
+source ./.venv/bin/activate # Optional: activate the virtual environment
+set -xe
+python build.py
+tar -C site/ -cz . > site.tar.gz
+curl --oauth2-bearer "<your-ouath2-token-here>" \
+    -Fcontent=@site.tar.gz https://pages.sr.ht/publish/<username>.srht.site
+rm -rf site.tar.gz
+```
