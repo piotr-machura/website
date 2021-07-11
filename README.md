@@ -4,11 +4,11 @@ This is the source for my personal website. It contains whatever I feel like thr
 It is built from markdown files using [python-markdown](https://pypi.org/project/Markdown/) and
 [jinja2](https://pypi.org/project/Jinja2/) template engine. The only JavaScript used is [KaTeX](https://katex.org/).
 
-### Installation
+## Building
 After puling with git run `pip install -r requirements.txt` (preferably in a virtual environment) to install build dependencies.
 Build with `python build.py`, serve locally with `python3 -m http.server --directory ./site`.
 
-### Deploying
+## Deploying
 To a remote location with rsync:
 ```bash
 #!/bin/bash

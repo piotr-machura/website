@@ -11,12 +11,12 @@ from glob import glob
 from datetime import datetime
 from shutil import rmtree, copytree, ignore_patterns
 from markdown import Markdown
-from jinja2 import Environment, FileSystemLoader as fsl
+from jinja2 import Environment, FileSystemLoader
 # pylint: disable=C0115, C0103, C0116
 
 
 class Document:
-    env = Environment(loader=fsl(searchpath="./templates"))
+    env = Environment(loader=FileSystemLoader(searchpath="./templates"))
 
     def __init__(self, path):
         self.path = ('./site/' + relpath(path, './src')).replace(
