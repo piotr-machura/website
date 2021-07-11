@@ -6,10 +6,10 @@ It is built from markdown files using [python-markdown](https://pypi.org/project
 
 ### Installation
 After puling with git run `pip install -r requirements.txt` (preferably in a virtual environment) to install build dependencies.
-Serve locally with `python3 -m http.server --directory ./site`.
+Build with `python build.py`, serve locally with `python3 -m http.server --directory ./site`.
 
 ### Deploying
-With rsync
+To a remote location with rsync:
 ```bash
 #!/bin/bash
 source ./.venv/bin/activate # Optional: activate the virtual environment
@@ -18,7 +18,7 @@ python3 build.py
 rsync --archive --compress --partial --delete \
     site/ user@hostname:/path/to/your/site/
 ```
-To Sourcehut pages
+To Sourcehut pages:
 ```bash
 #!/bin/bash
 source ./.venv/bin/activate # Optional: activate the virtual environment
