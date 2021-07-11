@@ -1,8 +1,8 @@
 Title:        Novel concepts in your story
 Description:  Exposition? I don't think so.
+Author:       Piotr Machura
 Date:         2021-06-28
 
-# Novel concepts in your story
 Me and my girlfriend have been watching 1st season of "His dark materials" on HBO lately, and the show made both of us
 think about the exact reason it's so… Meh.
 

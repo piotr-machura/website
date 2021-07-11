@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block body %}
+<header>
+<h1>Piotr Machura</h1>
 <address>
-<a href="mailto:me@piotr-machura.com" target="_blank">Mail</a> |
-<a href="https://sr.ht/~piotr-machura" target="_blank">Sourcehut</a> |
+<a href="mailto:me@piotr-machura.com" target="_blank">Mail</a>
+<a href="/res/pubkey.txt" target="_blank">GPG</a>
+<a href="https://sr.ht/~piotr-machura" target="_blank">Sourcehut</a>
 <a href="https://github.com/piotr-machura" target="_blank">GitHub</a>
 </address>
+</header>
 <main>
-{{ content }}
+{{ document.content }}
+{% for article in listing %}
+<h3>▸ <a href="{{ './' + article.dirname }}">{{ article.meta['title'] }}</a></h3>
+{{ article.meta['date'] }} - <em>{{ article.meta['description'] }}</em>
+{% endfor %}
 </main>
-{% endblock %}
-
-{% block nav %}
-<a href="./blog/">Blog</a>
-<a href="./projects/">Projects</a>
-<a href="./writing/">Writing</a>
 {% endblock %}

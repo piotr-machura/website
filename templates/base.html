@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>{{ meta['title'] }} :: Piotr Machura</title>
+<title>{{ document.meta['title'] }} :: Piotr Machura</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="{{ meta['description'] }}">
+<meta name="description" content="{{ document.meta['description'] }}">
 <link rel="shortcut icon" href="/res/favicon.ico">
 <link rel="stylesheet" type="text/css" href="/res/styles.css">
 <link rel="stylesheet" href="/res/katex.min.css">
@@ -21,17 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+{% block head %}
+{% endblock %}
 </head>
 <body>
-<div class="banner" role="landmark">
-<a href="/">Piotr Machura</a>
-</div>
-{% block content %}
+{% block body %}
 {% endblock %}
-<nav>
-{% block nav %}
-{% endblock %}
-</nav>
 <footer>
 <p>© Piotr Machura 2021.<br>
 Source: <a href="https://mit-license.org/">MIT</a>. Content: <a href=

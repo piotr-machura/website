@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 
-{% block content %}
-<header>Posted on {{ meta['date'] }}</header>
+{% block body %}
+<header>
+<h1>{{ document.meta['title'] }}</h1>
+{% if document.meta['repository'] %}
+<a href="{{ document.meta['repository'] }}" target="_blank">Repository</a> -
+{% endif %}
+{{ document.meta['date'] }} by <a href="
+{% if document.meta['author_site'] %}
+{{ document.meta['author_site'] }}
+{% else %}
+/
+{% endif %}
+">{{ document.meta['author'] }}</a>
+</header>
 <article>
-{{ content }}
+{{ document.content }}
 </article>
-{% endblock %}
-
-{% block nav %}
-<a href=".">Go back</a>
+<nav>
+<button><a href="../#articles">Go back</a></button>
+</nav>
 {% endblock %}

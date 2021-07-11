@@ -1,8 +1,8 @@
 Title:        Boundary catastrophe
-Description:  My parabolas are leaking
+Description:  Featuring: leaky parabolas
+Author:       Piotr Machura
 Date:         2021-07-10
 
-# Boundary catastrophe
 You know the logistic map? It goes something like
 
 $$
@@ -17,7 +17,7 @@ imagine non-linear equations simpler than a quadratic.
 If you were to graph the $x_{n+1}$ (the "next step") as a function of $x_n$ (the "previous step"), you would get
 something like this:
 
-![Logistic map, r=2](./img/logistic_r_2.jpg)
+![Logistic map, r=2](./logistic_r_2.jpg)
 
 There is a good reason I have limited the axis to $\langle0,1\rangle$ - if you were to start with some $x_0$ greater
 than 1, say $x_0 = 3$, then

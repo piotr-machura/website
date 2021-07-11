@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block body %}
+<header>
+<h1> {{document.meta['title'] }}</h1>
+Garbage brought to you by <a href="/">{{ document.meta['author'] }}</a>
+</header>
 <main>
-{{ content }}
+{{ document.content }}
 </main>
-{% endblock %}
-
-{% block nav %}
-<a href="..">Go back</a>
+<nav>
+<button><a href="..">Go back</a></button>
+</nav>
 {% endblock %}

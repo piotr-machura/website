@@ -1,9 +1,9 @@
 Title:        Personal server
 Description:  Your very own platform, with Docker
-Repository:   https://sr.ht/~piotr-machura/personal-server/
+Author:       Piotr Machura
 Date:         2021-04-18
+Repository:   https://sr.ht/~piotr-machura/personal-server/
 
-# Personal server
 I have wanted to get away from Google for quite some time now. The first step, obviously, is switching to DuckDuckGo,
 but after that things get significantly harder. I needed something to replace Gmail (for obvious reasons) and Google
 Contacts (as it is quite handy to have the same contact book in your email and your phone). It just so happens my needs

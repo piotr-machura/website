@@ -1,9 +1,9 @@
 Title:        This very website
 Description:  Yes, the one you're on right now
-Repository:   https://sr.ht/~piotr-machura/website/
+Author:       Piotr Machura
 Date:         2021-06-19
+Repository:   https://sr.ht/~piotr-machura/website/
 
-# This very website
 Picture this: you want to have your own website, some place on the Internet just for you and your thoughts. So now
 you have three options:
 
