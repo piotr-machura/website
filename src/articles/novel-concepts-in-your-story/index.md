@@ -83,4 +83,4 @@ The first option is more "old-school" and often frowned upon (as are info dumps 
 done**. I am personally in favor the second option - it creates an unbreakable bond between the objective the story is
 moving towards and characters' motives and arcs.
 
-Whatever you don, don't be "His darkest materials". Because it does neither.
+Whatever you do, don't be "His darkest materials". Because it does neither.

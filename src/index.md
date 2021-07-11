@@ -12,7 +12,7 @@ Hi, my name is Piotr Machura, and I study computer physics at Warsaw University 
 engineer's thesis on information diffusion in complex networks. In my free time I like to dissect works of fiction and over analyze every little detail, which is a horribly annoying
 habit to have if you like watching TV shows with, say, your girlfriend.
 
-I also [write](/writing) things in &#127477&#127473 **GLORIOUS POLISH** &#127477&#127473. Don't readi it though, it;s
+I also [write](/writing) things in &#127477&#127473 **GLORIOUS POLISH** &#127477&#127473. Don't read it though, it's
 *pure garbage*.
 
 ## Articles
