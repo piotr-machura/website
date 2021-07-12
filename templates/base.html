@@ -8,9 +8,13 @@
 <meta name="description" content="{{ document.meta['description'] }}">
 <link rel="shortcut icon" href="/res/favicon.ico">
 <link rel="stylesheet" type="text/css" href="/res/styles.css">
-<link rel="stylesheet" href="/res/katex.min.css">
+<link rel="stylesheet" type="text/css" href="/res/katex.min.css">
+<link rel="stylesheet" type="text/css" media="" href="/res/highlight.min.css">
+<link rel="stylesheet" type="text/css" media="only screen and (prefers-color-scheme: dark)" href="/res/highlight-dark.min.css">
+<script src="/res/highlight.min.js"></script>
 <script defer src="/res/katex.min.js"></script>
-<script defer src="/res/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script defer src="/res/auto-render.min.js"></script>
+<script>hljs.highlightAll();</script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   renderMathInElement(document.body, {

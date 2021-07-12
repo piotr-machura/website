@@ -9,10 +9,12 @@ $$
 x_{n+1} = rx_n(1-x_n)
 $$
 
-The $n$'s are the discrete time steps, $x_n$ is some value (say, 1-dimensional position) at time $n$ and $r$ is some
-positive real number. The map is given by a **difference equation**, a discrete differential equation, which, as you can
-see, is **nonlinear**. It's often given as an example in any introduction to nonlinear systems, since it's hard to
-imagine non-linear equations simpler than a quadratic.
+The $n$'s are the discrete time steps, $x_n$ is some value (say, 1-dimensional position) at time $n$ and $r$ is the
+**control parameter** - some positive real number, for now let's assume $r = 3.75$.
+
+The map is given by a **difference equation**, a discrete differential equation, which, as you can see, is
+**nonlinear**.  It's often given as an example in any introduction to nonlinear systems, since it's hard to imagine
+non-linear equations simpler than a quadratic.
 
 If you were to graph the $x_{n+1}$ (the "next step") as a function of $x_n$ (the "previous step"), you would get
 something like this:
@@ -25,13 +27,21 @@ $$
 x_1 = 2 \cdot 3\cdot (1-3) = -12, \hspace{10pt}
 x_2 = 2 \cdot (-12) \cdot (1-(-12)) = -312, \hspace{10pt} \ldots
 $$
-and the $x_n$'s quickly diverge to $-\infty$. Convince yourself that the same is true for any $x_0 \lt 0$.
+and the $x_n$'s quickly diverge to $-\infty$. The following python snippet may convince you that the same is true for any $x_0 \lt 0$:
+```python
+x = [-0.1]
+for _ in range(12):
+  print(x[-1])
+  x.append(3.75 * x[-1] * (1 - x[-1]))
+```
+So the $x_0$'s (and by extensions any $x_n$'s) **need** to be between $0$ and $1$, or else the sequence diverges, and it
+diverges very quickly. Hold that thought.
 
 ## Spider's web
-How would you even use such a plot? Sure, I can calculate $x_{n+1}$ if I know $x_n$, but is there a *closed-form*
-for this map? A way to calculate $x_n$ from just the $n$ itself (together with a start point $x_0$)? Well, the whole fun
-with nonlinear dynamics is that you **can't**. But you can write the **phase trajectory** - the sequence of $x_n$'s
-starting at some chosen point $x_0$, say
+That's all well and good, you may say, but how would you even use such a plot? Sure, I can calculate $x_{n+1}$ if I know
+$x_n$, but is there a *closed-form* for this map? A way to calculate $x_n$ from just the $n$ itself (together with a
+start point $x_0$)? Well, the whole fun with nonlinear dynamics is that you **can't**. But you can write the **phase
+trajectory** - the sequence of $x_n$'s starting at some chosen point $x_0$, say
 $$
 x_0 = 0.1, \hspace{5pt}
 x_1 = 0.3375, \hspace{5pt}

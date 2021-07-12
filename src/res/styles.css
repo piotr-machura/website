@@ -10,7 +10,7 @@ body {
     line-height: 1.5;
     color: #2e3440;
     background-color: white;
-    font-family: sans-serif;
+    font-family: 'Liberation Sans', 'Arial', sans-serif;
 }
 
 /* Content */
@@ -46,19 +46,16 @@ pre, blockquote {
     display: block;
     margin: 0 0.5em 0.75rem;
 }
-pre {
-    padding: 0.75rem 0.75rem;
-    background: #eceff4;
-    border: 2px dotted #2e3440;
-}
 code {
     background: #eceff4;
     padding: 0.1rem 0.25rem;
     font-size: 0.85rem;
     font-family: 'JetBrains Mono', monospace;
 }
+pre {
+    border: 2px dotted #4c566a;
+}
 pre code {
-    padding: 0;
     font-size: 0.9rem;
 }
 blockquote {
@@ -174,9 +171,9 @@ footer p {
         color: #88c0d0;
     }
     hr, pre, header, footer, table {
-        border-color: #eceff4 !important;
+        border-color: #eceff4;
     }
-    pre, thead, code, button {
+    thead, code, button {
         background: #434c5e;
     }
 }
