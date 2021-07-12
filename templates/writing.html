@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block head %}
+<base href="{{ '/' + document.dirname + '/'}}">
+{% endblock %}
+
 {% block body %}
 <header>
 <h1> {{document.meta['title'] }}</h1>

@@ -12,7 +12,7 @@ Hi, my name is Piotr Machura, and I study computer physics at Warsaw University 
 engineer's thesis on information diffusion in complex networks. In my free time I like to dissect works of fiction and over analyze every little detail, which is a horribly annoying
 habit to have if you like watching TV shows with, say, your girlfriend.
 
-I also [write stories](/writing). Don't get too excited though, they're *pure garbage*.
+I also [write stories](/writing/). Don't get too excited though, they're *pure garbage*.
 
 ## Articles
 The things I write when I'm angry or excited. Some of them are related to my software projects, some are not. It's like
