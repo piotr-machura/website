@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block head %}
+<style>
+h3:before { content: "▸ "; }
+</style>
+{% endblock %}
 
 {% block body %}
 <header>
@@ -13,7 +18,7 @@
 <main>
 {{ document.content }}
 {% for article in listing %}
-<h3>▸ <a href="{{ '/' + article.dirname + '/' }}">{{ article.meta['title'] }}</a></h3>
+<h3><a href="{{ '/' + article.dirname + '/' }}">{{ article.meta['title'] }}</a></h3>
 <p>{{ article.meta['date'] }} - <em>{{ article.meta['description'] }}</em></p>
 {% endfor %}
 </main>

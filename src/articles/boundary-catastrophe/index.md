@@ -29,7 +29,7 @@ x_2 = 2 \cdot (-12) \cdot (1-(-12)) = -312, \hspace{10pt} \ldots
 $$
 and the $x_n$'s quickly diverge to $-\infty$. The following python snippet may convince you that the same is true for any $x_0 \lt 0$:
 ```python
-x = [-0.1]
+x = [-0.1] # Feel free to try out different starting conditions
 for _ in range(12):
   print(x[-1])
   x.append(3.75 * x[-1] * (1 - x[-1]))
